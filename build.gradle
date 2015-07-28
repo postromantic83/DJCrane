@@ -1,0 +1,25 @@
+group 'ru.sokolovproject'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: "application"
+apply plugin: "idea"
+
+sourceCompatibility = 1.8
+version = "1.0"
+
+repositories {
+    mavenCentral()
+}
+jar.manifest.attributes("Main-Class": "mainpack.Main")
+
+mainClassName = "mainpack.Main"
+
+dependencies {
+
+    testCompile "junit:junit:4.+"
+    testCompile "org.mockito:mockito-core:1.+"
+
+    compile 'org.slf4j:slf4j-api:1.7.+'
+    compile 'org.slf4j:slf4j-simple:1.7.+'
+}
