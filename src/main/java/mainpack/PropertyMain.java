@@ -16,11 +16,11 @@ public class PropertyMain {
 
     Logger logger = LoggerFactory.getLogger(Main.class);
 
-    public int FIELD_WIDTH;
-    public int FIELD_HEIGHT;
-    public int STARTX;
-    public int STARTY;
-    public int SCALE;
+    private int FIELD_WIDTH;
+    private int FIELD_HEIGHT;
+    private int STARTX;
+    private int STARTY;
+    private int SCALE;
 
     PropertyMain (){
         FileInputStream fis;
