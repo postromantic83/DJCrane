@@ -1,4 +1,4 @@
-package testmodel;
+package model;
 
 /**
  * Created by Sokolov on 04.02.2015.
