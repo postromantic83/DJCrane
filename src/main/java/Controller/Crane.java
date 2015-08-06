@@ -13,7 +13,7 @@ public class Crane extends AbstractCrane  {
 
     //TODO deprecated class, will be deleted after layout refactoring code
 
-
+    //refactor package
 
     //CranePanel panel1;
     String model;
