@@ -22,7 +22,7 @@ public class PropertyMain {
     public int STARTY;
     public int SCALE;
 
-    PropertyMain (){
+    public PropertyMain (){
         FileInputStream fis;
         Properties property = new Properties();
 
