@@ -11,7 +11,7 @@ import view.*;
 
 public class Crane extends AbstractCrane  {
 
-    //TODO deprecated class, will be deleted after layout refactoring
+    //TODO deprecated class, will be deleted after layout refactoring code
 
     //CranePanel panel1;
     String model;
