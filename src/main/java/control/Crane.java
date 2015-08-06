@@ -1,4 +1,4 @@
-package Contrl;
+package control;
 
 /**
  * Created by ShurikNote on 29.07.2015.
@@ -16,7 +16,7 @@ public class Crane extends AbstractCrane  {
 
     //TODO deprecated class, will be deleted after layout refactoring code
 
-//testing
+//Now in new package
 
     //CranePanel panel1;
     String model;

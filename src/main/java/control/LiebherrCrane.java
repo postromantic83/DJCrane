@@ -1,4 +1,4 @@
-package Contrl;
+package control;
 
 import model.Section;
 import view.ControlPanel;

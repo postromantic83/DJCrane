@@ -1,6 +1,6 @@
 package View;
 
-import Contrl.Crane;
+import control.Crane;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,9 +1,9 @@
 package View;
 
-import Contrl.Crane;
-import Contrl.EverdigmCrane;
-import Contrl.LiebherrCrane;
-import Contrl.PotainCrane;
+import control.Crane;
+import control.EverdigmCrane;
+import control.LiebherrCrane;
+import control.PotainCrane;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
