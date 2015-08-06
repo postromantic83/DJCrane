@@ -13,9 +13,6 @@ public class Crane extends AbstractCrane  {
 
     //TODO deprecated class, will be deleted after layout refactoring code
 
-    //TODO added 33
-
-    //edited
 
 
     //CranePanel panel1;
