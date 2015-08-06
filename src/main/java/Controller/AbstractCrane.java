@@ -1,11 +1,11 @@
-package controller;
+package Controller;
 
 import view.*;
 
 /**
  * Created by SashaNote on 05.08.2015.
  *
- * SRM: define main controller functions for all type of cranes (tower cranes, allterraincranes, autocranes ets.)
+ * SRM: define main Controller functions for all type of cranes (tower cranes, allterraincranes, autocranes ets.)
  *
  */
 public abstract class AbstractCrane implements Cranable{

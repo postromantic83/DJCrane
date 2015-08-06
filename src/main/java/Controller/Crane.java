@@ -1,4 +1,4 @@
-package controller;
+package Controller;
 
 /**
  * Created by ShurikNote on 29.07.2015.
@@ -6,14 +6,17 @@ package controller;
 
 
 import java.util.ArrayList;
-import view.*;
+
+import View.ControlPanel;
+import View.CranePanel;
+
 
 
 public class Crane extends AbstractCrane  {
 
     //TODO deprecated class, will be deleted after layout refactoring code
 
-    //refactor package
+//testing
 
     //CranePanel panel1;
     String model;
