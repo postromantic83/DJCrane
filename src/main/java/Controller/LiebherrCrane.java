@@ -10,7 +10,10 @@ import java.util.ArrayList;
 /**
  * Created by Sokolov on 03.02.2015.
  */
+
 public class LiebherrCrane extends TowerCrane {
+
+
 
     CranePanel cranePanel;
     ControlPanel lp;
@@ -190,7 +193,7 @@ public class LiebherrCrane extends TowerCrane {
 
 
     public double getHeight(){
-        float height = (float) (0.22+10.0*s154hc1616 + 10.0*s154hc168+ 10.0*s132hc168+12.5*s132hc125 + 5.0*s132hc5+2.5*s132hc25+4.7-3);
+        double height = (float) (0.22+10.0*s154hc1616 + 10.0*s154hc168+ 10.0*s132hc168+12.5*s132hc125 + 5.0*s132hc5+2.5*s132hc25+4.7-3);
         return height;
     }
 
