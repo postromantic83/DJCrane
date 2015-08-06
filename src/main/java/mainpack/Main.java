@@ -1,7 +1,7 @@
 package mainpack;
 
 import control.TowerCrane;
-import View.CranePanel;
+import testview.CranePanel;
 
 /**
  * Created by ShurikNote on 28.07.2015.
