@@ -1,6 +1,6 @@
 package Contrl;
 
-import view.*;
+import View.*;
 
 /**
  * Created by SashaNote on 05.08.2015.
