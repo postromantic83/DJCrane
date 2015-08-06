@@ -70,8 +70,8 @@ public class LiebherrControl extends ControlPanel {
 
     }
 
-//    LiebherrControl (LiebherrCrane model){
-//        this.crane = model;
+//    LiebherrControl (LiebherrCrane testmodel){
+//        this.crane = testmodel;
 //    }
 
     /*public Container createPanel (Crane inputCrane) {

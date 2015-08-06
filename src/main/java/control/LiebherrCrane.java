@@ -1,6 +1,6 @@
 package control;
 
-import model.Section;
+import testmodel.Section;
 import view.ControlPanel;
 import view.CranePanel;
 import view.LiebherrControl;

@@ -1,6 +1,6 @@
 package control;
 
-import model.Section;
+import testmodel.Section;
 
 import java.util.ArrayList;
 
