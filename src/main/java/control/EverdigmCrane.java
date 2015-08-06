@@ -1,6 +1,6 @@
 package control;
 
-import testview.CranePanel;
+import view.CranePanel;
 
 /**
  * Created by sokolov on 19.02.2015.

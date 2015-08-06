@@ -7,8 +7,8 @@ package control;
 
 import java.util.ArrayList;
 
-import testview.ControlPanel;
-import testview.CranePanel;
+import view.ControlPanel;
+import view.CranePanel;
 
 
 

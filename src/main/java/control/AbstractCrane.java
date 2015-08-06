@@ -1,6 +1,6 @@
 package control;
 
-import testview.*;
+import view.*;
 
 /**
  * Created by SashaNote on 05.08.2015.

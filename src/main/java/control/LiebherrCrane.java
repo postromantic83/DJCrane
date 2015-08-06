@@ -1,9 +1,9 @@
 package control;
 
 import model.Section;
-import testview.ControlPanel;
-import testview.CranePanel;
-import testview.LiebherrControl;
+import view.ControlPanel;
+import view.CranePanel;
+import view.LiebherrControl;
 
 import java.util.ArrayList;
 
