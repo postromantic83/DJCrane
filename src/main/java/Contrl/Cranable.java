@@ -1,4 +1,4 @@
-package controller;
+package Contrl;
 
 /**
  * Created by ShurikNote on 29.07.2015.

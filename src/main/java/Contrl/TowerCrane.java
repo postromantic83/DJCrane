@@ -1,4 +1,4 @@
-package controller;
+package Contrl;
 
 import model.Section;
 
