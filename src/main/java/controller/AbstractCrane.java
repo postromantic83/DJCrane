@@ -1,11 +1,11 @@
-package control;
+package controller;
 
 import view.*;
 
 /**
  * Created by SashaNote on 05.08.2015.
  *
- * SRM: define main control functions for all type of cranes (tower cranes, allterraincranes, autocranes ets.)
+ * SRM: define main controller functions for all type of cranes (tower cranes, allterraincranes, autocranes ets.)
  *
  */
 public abstract class AbstractCrane implements Cranable{
@@ -41,10 +41,18 @@ public abstract class AbstractCrane implements Cranable{
     }
 
     @Override
-    public void createControl() {
+    public void createControl(CranePanel cranePanel, TowerCrane crane) {
         //do nothing
 
     }
 
+    @Override
+    public String[] getAvailableModels() {
+        return new String[0];
+    }
 
+    public String [] getAvailableModifications(String mod){
+
+        return new String[0];
+    }
 }

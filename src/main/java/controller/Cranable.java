@@ -1,4 +1,6 @@
-package control;
+package controller;
+
+import view.CranePanel;
 
 /**
  * Created by ShurikNote on 29.07.2015.
@@ -16,7 +18,7 @@ public interface Cranable {
 
     //as soon as I connect to database constans will be useless
 
-    public final String PRODUCER[]={"- - -","Liebherr","Potain", "Everdigm"};
+
     public final String POTAINMODELS[]={"Potain MDT-178","Potain MDT218J10", "Potain MCT-88"};
     public final String EVERDIGMMODELS[]={"Everdigm KH-310"};
     public final String variant[]={"На анкерах","На раме"};
@@ -29,10 +31,9 @@ public interface Cranable {
     void setProducer(String producer);
     String getModel();
     String getProducer();
+    String [] getAvailableModels();
 
-
-
-    void createControl();
+    void createControl(CranePanel cranePanel, TowerCrane crane);
 
 
 }

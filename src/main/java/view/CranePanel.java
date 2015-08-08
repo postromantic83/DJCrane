@@ -1,5 +1,6 @@
 package view;
 
+
 import mainpack.PropertyMain;
 
 import javax.swing.*;
@@ -7,6 +8,9 @@ import java.awt.*;
 
 /**
  * Created by Sokolov on 02.02.2015.
+ *
+ * SRM: create main program field
+ *
  */
 public class CranePanel extends JPanel {
 
@@ -37,8 +41,8 @@ public class CranePanel extends JPanel {
 
 
     //panHeight
-    JLabel labelHeader = new JLabel("Высота подъёма");
-    JLabel labelHeader2 = new JLabel("Высота подвеса стрелы");
+    JLabel labelHeader = new JLabel("Height");
+    JLabel labelHeader2 = new JLabel("Height under Jib");
     JLabel hHeader1 = new JLabel("0");
     JLabel hHeader2 = new JLabel("0");
 

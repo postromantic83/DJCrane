@@ -1,6 +1,6 @@
 package mainpack;
 
-import control.TowerCrane;
+import controller.TowerCrane;
 import view.CranePanel;
 
 /**

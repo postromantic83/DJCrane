@@ -1,6 +1,7 @@
 package view;
 
-import control.Crane;
+import controller.LiebherrCrane;
+import controller.TowerCrane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,10 +25,10 @@ public class LiebherrControl extends ControlPanel {
 
 //    PanelAction panelAction = new PanelAction(this);
 
-    Crane crane;
+    TowerCrane crane;
     CranePanel cranePanel;
     JPanel panControl = new JPanel();
-//120-132HC tower control initialize
+//120-132HC tower controller initialize
     JLabel lb120_25 = new JLabel("120HC 2,5 m");
     JLabel lb120_50 = new JLabel("120HC 5,0 m");
     JLabel lb120_125 = new JLabel("120HC 12,5 m");
@@ -64,7 +65,7 @@ public class LiebherrControl extends ControlPanel {
     LiebherrControl (){}
 
 
-    public LiebherrControl(CranePanel cp, Crane crane){
+    public LiebherrControl(CranePanel cp, LiebherrCrane crane){
         this.cranePanel = cp;
         this.crane= crane;
 
@@ -199,7 +200,7 @@ public class LiebherrControl extends ControlPanel {
 
 
             /**
-             *  Actions for control panel buttons
+             *  Actions for controller panel buttons
              *
             */
 
@@ -359,8 +360,8 @@ public class LiebherrControl extends ControlPanel {
         cranePanel.mp1.setCollection(crane.getTower());
         cranePanel.mp1.repaint();
 
-        cranePanel.hHeader1.setText(Float.toString(crane.getHeight()));
-        cranePanel.hHeader2.setText(Float.toString(crane.getHeight2(crane.getHeight())));
+        cranePanel.hHeader1.setText(Double.toString(crane.getHeight()));
+        cranePanel.hHeader2.setText(Double.toString(crane.getHeightUnderJib(crane.getHeight())));
     }
 
     //overrided getters to GUI

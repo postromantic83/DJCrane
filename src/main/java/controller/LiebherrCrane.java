@@ -1,4 +1,4 @@
-package control;
+package controller;
 
 import model.Section;
 import view.ControlPanel;
@@ -18,6 +18,9 @@ public class LiebherrCrane extends TowerCrane {
     CranePanel cranePanel;
     ControlPanel lp;
     LiebherrCrane crane132;
+
+
+
     private int i,n;
     private int s154hc168, s154hc1616,s132hc5,s132hc25,s132hc125,s132hc168;
     private String modelName;
@@ -131,6 +134,7 @@ public class LiebherrCrane extends TowerCrane {
 
     }
 
+
     public String[] getAvailableModels(){
         final String LIEBHERRMODELS[]={"Liebherr 112EC-H8","Liebherr 132EC-H8", "Liebherr 154EC-H10"};
         return LIEBHERRMODELS;
@@ -157,24 +161,26 @@ public class LiebherrCrane extends TowerCrane {
     }
 
 
-    //current active control panel
-    public void createControl (CranePanel cranePanel, Crane crane){
+    //current active controller panel
+    //return later (suppressed!)
+
+    public void createControl (CranePanel cranePanel, TowerCrane crane){
 
         ControlPanel lp = new LiebherrControl(cranePanel, this);
         lp.setControl(lp);
     }
 
 
-    public ControlPanel setControl(CranePanel cp){
+  /*  public ControlPanel setControl(CranePanel cp){
 
         ControlPanel lp = new LiebherrControl(cp, this);
         return lp;
-    }
+    }*/
 
 
 
 
-    public Crane setTowerCombination (CranePanel parent, ControlPanel lc) {
+    public TowerCrane setTowerCombination(CranePanel parent, ControlPanel lc) {
 
         crane132 = new Builder("Liebherr 132EC-H8")
                 .s132hc25(lc.getS120HC_25())
@@ -193,18 +199,13 @@ public class LiebherrCrane extends TowerCrane {
 
 
     public double getHeight(){
-        double height = (float) (0.22+10.0*s154hc1616 + 10.0*s154hc168+ 10.0*s132hc168+12.5*s132hc125 + 5.0*s132hc5+2.5*s132hc25+4.7-3);
+        double height = (double) (0.22+10.0*s154hc1616 + 10.0*s154hc168+ 10.0*s132hc168+12.5*s132hc125 + 5.0*s132hc5+2.5*s132hc25+4.7-3);
         return height;
     }
 
-    public float getHeight2(float height) {
+    public double getHeightUnderJib(double height) {
 
-        float height2 = (float) (height+3.0);
-
-        String s1  = "String1";
-        String s2 = "String2";
-
-
+        double height2 =  height+3.0;
 
         return height2;
 

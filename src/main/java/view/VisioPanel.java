@@ -4,6 +4,7 @@ package view;
 
 
 import mainpack.PropertyMain;
+import model.Section;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -77,11 +78,12 @@ public class VisioPanel extends JPanel {
 
         BasicStroke pen1 = new BasicStroke(1);
         BasicStroke pen2 = new BasicStroke(2);
+        props = new PropertyMain();
 
 
-        int x = STARTX;
-        int y = STARTY;
-        int m = SCALE;
+        int x = props.STARTX;
+        int y = props.STARTY;
+        int m = props.SCALE;
 
 
         if (this.col2 != null) {

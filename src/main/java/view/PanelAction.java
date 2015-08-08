@@ -1,9 +1,6 @@
 package view;
 
-import control.Crane;
-import control.EverdigmCrane;
-import control.LiebherrCrane;
-import control.PotainCrane;
+import controller.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,7 +15,7 @@ import java.awt.event.ActionListener;
 public class PanelAction implements ActionListener {
 
     CranePanel cranePanel;
-    Crane crane;
+    TowerCrane crane;
     JPanel panControl;
     ControlPanel controlPanel;
 

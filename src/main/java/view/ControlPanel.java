@@ -1,6 +1,6 @@
 package view;
 
-import control.Crane;
+import controller.TowerCrane;
 
 import javax.swing.*;
 
@@ -9,7 +9,7 @@ import javax.swing.*;
  */
 public class ControlPanel extends JPanel {
 
-   private Crane crane;
+   private TowerCrane crane;
 
     ControlPanel (){
 

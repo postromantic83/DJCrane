@@ -1,11 +1,11 @@
-package control;
+package controller;
 
 import view.CranePanel;
 
 /**
  * Created by sokolov on 19.02.2015.
  */
-public class EverdigmCrane extends Crane {
+public class EverdigmCrane extends TowerCrane {
     CranePanel parent;
 
 

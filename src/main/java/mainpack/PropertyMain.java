@@ -2,6 +2,8 @@ package mainpack;
 
 /**
  * Created by ShurikNote on 28.07.2015.
+ *
+ * SRM: read program constants
  */
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

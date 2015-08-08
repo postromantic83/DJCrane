@@ -9,7 +9,7 @@ public class Section {
     float mass;
     float lenght,height,weight;
     TowerSection typ;
-    String name;
+    public String name;
     int id;
 
 
