@@ -17,15 +17,19 @@ public class CranePanel extends JPanel {
 
 
 
+
     private JLabel label;
 
     //get params from properties
     PropertyMain proper = new PropertyMain();
+
+
+
     //TODO change to separate metod
     public final String PRODUCER[]={"- - -","Liebherr","Potain", "Everdigm"};
 
 
-    Dimension preferredSize = new Dimension(proper.FIELD_WIDTH, proper.FIELD_HEIGHT);
+    Dimension preferredSize = new Dimension(proper.getFIELD_WIDTH(), proper.getFIELD_HEIGHT());
     public Dimension getPreferredSize() {
         return preferredSize;
     }
@@ -166,7 +170,7 @@ public class CranePanel extends JPanel {
 
         frame.setContentPane(pan);
         frame.pack();
-        frame.setBounds(0, 0, proper.FIELD_WIDTH, proper.FIELD_HEIGHT);
+        frame.setBounds(0, 0, proper.getFIELD_HEIGHT(), proper.getFIELD_WIDTH());
         frame.setVisible(true);
 
 
