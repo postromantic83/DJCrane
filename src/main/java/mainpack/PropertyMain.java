@@ -19,31 +19,29 @@ public class PropertyMain {
     Logger logger = LoggerFactory.getLogger(Main.class);
 
 
-
+    public int getFIELD_WIDTH(){
+        return FIELD_WIDTH;
+    }
     public int getFIELD_HEIGHT() {
         return FIELD_HEIGHT;
     }
-
-        public int getSTARTX() {
+    public int getSTARTX() {
         return STARTX;
     }
-
     public int getSTARTY() {
         return STARTY;
     }
-
     public int getSCALE() {
         return SCALE;
     }
+
     private int FIELD_WIDTH;
     private int FIELD_HEIGHT;
     private int STARTX;
     private int STARTY;
     private int SCALE;
 
-    public int getFIELD_WIDTH(){
-        return FIELD_WIDTH;
-    }
+
 
 
     public PropertyMain (){
