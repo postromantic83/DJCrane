@@ -81,9 +81,9 @@ public class VisioPanel extends JPanel {
         props = new PropertyMain();
 
 
-        int x = props.STARTX;
-        int y = props.STARTY;
-        int m = props.SCALE;
+        int x = props.getSTARTX();
+        int y = props.getSTARTY();
+        int m = props.getSCALE();
 
 
         if (this.col2 != null) {

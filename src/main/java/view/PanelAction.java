@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Sokolov on 03.02.2015.
  *
- *
+ * SRM: abstract factory for crane
  *
  */
 public class PanelAction implements ActionListener {
