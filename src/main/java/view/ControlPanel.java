@@ -6,6 +6,8 @@ import javax.swing.*;
 
 /**
  * Created by sokolov on 16.02.2015.
+ *
+ * SRM: factory of controlled params
  */
 public class ControlPanel extends JPanel {
 
