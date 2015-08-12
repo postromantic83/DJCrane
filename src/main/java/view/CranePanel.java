@@ -2,6 +2,7 @@ package view;
 
 
 import mainpack.PropertyMain;
+import model.CraneStructure;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,29 +16,18 @@ import java.awt.*;
 public class CranePanel extends JPanel {
 
 
-
-
     private JLabel label;
 
     //get params from properties
     PropertyMain proper = new PropertyMain();
-    //TODO change to separate metod
-    public final String PRODUCER[]={"- - -","Liebherr","Potain", "Everdigm"};
+    CraneStructure craneStructure = new CraneStructure();
+
 
 
     Dimension preferredSize = new Dimension(proper.getFIELD_WIDTH(), proper.getFIELD_HEIGHT());
     public Dimension getPreferredSize() {
         return preferredSize;
     }
-
-
-
-
-
-
-
-
-
 
 
     //panHeight
@@ -47,10 +37,8 @@ public class CranePanel extends JPanel {
     JLabel hHeader2 = new JLabel("0");
 
 
-
     JPanel panLeft = new JPanel();
-
-    JComboBox comb1 = new JComboBox<String>(PRODUCER);
+    JComboBox comb1 = new JComboBox<String>(craneStructure.getAvailableProducers());
     JComboBox comb2 = new JComboBox<String>();
     JComboBox comb3 = new JComboBox<String>();
 
@@ -59,8 +47,6 @@ public class CranePanel extends JPanel {
     JMenuBar jmb = new JMenuBar();
     JMenu jmFile = new JMenu("Menu");
     JMenuItem jmSave = new JMenuItem("Save as png");
-
-
 
 
     public CranePanel() {
@@ -178,10 +164,6 @@ public class CranePanel extends JPanel {
         PanelAction panelAction = new PanelAction(this, controlPanel);
 
 
-
-
-
-
         comb1.addActionListener(panelAction);
         comb2.addActionListener(panelAction);
         comb3.addActionListener(panelAction);
@@ -192,7 +174,7 @@ public class CranePanel extends JPanel {
     public void addContol(Container container) {
 
 
-        System.out.println("АД контрол тул!");
+        //control panel adding
         panLeft.add(container);
 
 
@@ -216,8 +198,11 @@ public class CranePanel extends JPanel {
     }
 
 
-      public void setComb2(String[] am) {
+      public void setComb2(String producer) {
 
+          craneStructure.setAvailableModels(producer);
+
+          String [] am = craneStructure.getAvailableModels();
 /*Метод заполняет модельный комбобокс*/
 
         for (String s : am) {

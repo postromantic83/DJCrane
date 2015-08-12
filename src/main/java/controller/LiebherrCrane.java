@@ -18,6 +18,7 @@ public class LiebherrCrane extends TowerCrane {
 
 
 
+
     CranePanel cranePanel;
     ControlPanel lp;
     LiebherrCrane crane132;
@@ -138,10 +139,10 @@ public class LiebherrCrane extends TowerCrane {
     }
 
 
-    public String[] getAvailableModels(){
+ /*   public String[] getAvailableModels(){
         final String LIEBHERRMODELS[]={"Liebherr 112EC-H8","Liebherr 132EC-H8", "Liebherr 154EC-H10"};
         return LIEBHERRMODELS;
-    }
+    }*/
 
     public String [] getAvailableModifications(String mod){
 
@@ -174,11 +175,6 @@ public class LiebherrCrane extends TowerCrane {
     }
 
 
-  /*  public ControlPanel setControl(CranePanel cp){
-
-        ControlPanel lp = new LiebherrControl(cp, this);
-        return lp;
-    }*/
 
 
 

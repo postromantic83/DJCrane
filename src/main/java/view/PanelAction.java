@@ -14,18 +14,18 @@ import java.awt.event.ActionListener;
  */
 public class PanelAction implements ActionListener {
 
-    CranePanel cranePanel;
-    TowerCrane crane;
-    JPanel panControl;
-    ControlPanel controlPanel;
+    private CranePanel cranePanel;
+    private TowerCrane crane;
+//    private JPanel panControl;
+    private ControlPanel controlPanel;
 
     public PanelAction(CranePanel cranePanel, ControlPanel controlPanel) {
 
-        System.out.println ("PanelAction - constr: " + controlPanel.toString());
+
         this.cranePanel = cranePanel;
         this.controlPanel = controlPanel;
 
-        System.out.println("this.controlPanel: : " + this.controlPanel.toString());
+
 
     }
 
@@ -33,15 +33,8 @@ public class PanelAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         Object src = actionEvent.getSource();
-        int val1;
 
-
-
-        System.out.println("controlPanel: " + controlPanel.toString());
-
-
-
-        //set customer
+               //set customer
        if (src==cranePanel.comb1) {
 
            if (cranePanel.comb1.getSelectedItem() == "Liebherr") {
@@ -61,14 +54,15 @@ public class PanelAction implements ActionListener {
            }
            //clean and fill comb3 from crane class
            cranePanel.comb2.removeAllItems();
-           cranePanel.setComb2(crane.getAvailableModels());
+           cranePanel.setComb2((String) cranePanel.comb1.getSelectedItem());
+//           cranePanel.setComb2(crane.getAvailableModels());
            }
 
 
 
 
 
-
+        //set model
         if (src==cranePanel.comb2){
 
 
@@ -86,15 +80,11 @@ public class PanelAction implements ActionListener {
 
 
 
-        prepareCrane();
+//        prepareCrane();
 
         }
 
         public void prepareCrane (){
-
-
-            System.out.println("setTowerCombination method!");
-
 
         }
 

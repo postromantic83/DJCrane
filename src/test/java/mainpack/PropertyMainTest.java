@@ -28,11 +28,11 @@ public class PropertyMainTest {
 
     @Test
     public void propertiReturnsIncorrectFileValues (){
-        assertEquals ("Width is not correct!",1000,proper.FIELD_WIDTH);
-        assertEquals ("Height is not correct!",768,proper.FIELD_HEIGHT);
-        assertEquals ("Start_x is not correct!",200,proper.STARTX);
-        assertEquals ("Start_y is not correct!",650,proper.STARTY);
-        assertEquals ("Scale is not correct!",10,proper.SCALE);
+        assertEquals ("Width is not correct!",1000,proper.getFIELD_WIDTH());
+        assertEquals ("Height is not correct!",768,proper.getFIELD_HEIGHT());
+        assertEquals ("Start_x is not correct!",200,proper.getSTARTX());
+        assertEquals ("Start_y is not correct!",650,proper.getSTARTY());
+        assertEquals ("Scale is not correct!",10,proper.getSCALE());
         }
 
     @Test(expected = IOException.class)

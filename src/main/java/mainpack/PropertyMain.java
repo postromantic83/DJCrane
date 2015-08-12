@@ -25,12 +25,8 @@ public class PropertyMain {
     public int getFIELD_HEIGHT() {
         return FIELD_HEIGHT;
     }
-    public int getSTARTX() {
-        return STARTX;
-    }
-    public int getSTARTY() {
-        return STARTY;
-    }
+    public int getSTARTX() {return STARTX;   }
+    public int getSTARTY() { return STARTY;}
     public int getSCALE() {
         return SCALE;
     }
