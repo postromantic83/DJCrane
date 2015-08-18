@@ -1,7 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.SortedSet;
+
 
 /**
  * Created by SashaNote on 12.08.2015.
@@ -10,9 +10,11 @@ import java.util.SortedSet;
  *
  */
 public class CraneStructure {
- ArrayList<String> availableModels;
+    private ArrayList<String> availableModels;
+    private ArrayList<String> availableModifications;
     public CraneStructure(){
         availableModels = new ArrayList<String>();
+        availableModifications = new ArrayList<String>();
 
 
 
@@ -25,7 +27,7 @@ public class CraneStructure {
         return PRODUCER;
     }
 
-     public synchronized void setAvailableModels (String producer) {
+     public void setAvailableModels (String producer) {
          availableModels.clear();
 
          //Later I will change this to SQL exec
@@ -35,7 +37,7 @@ public class CraneStructure {
          if (producer=="Liebherr"){
              availableModels.add ("Liebherr 112EC-H8");
              availableModels.add ("Liebherr 132EC-H8");
-             availableModels.add ("Liebherr 154EC-H8");
+             availableModels.add ("Liebherr 154EC-H10");
 
          }
          if (producer=="Potain"){
@@ -48,18 +50,39 @@ public class CraneStructure {
          }
 
     }
+    //getters specially return String Array
+
     public String [] getAvailableModels (){
+
 
         String[] arrayModels = new String[availableModels.size()];
         arrayModels = availableModels.toArray(arrayModels);
         return arrayModels;
     }
 
+    public void setAvailableModifications (String model) {
+        availableModifications.clear();
+        if (model == "Liebherr 112EC-H8" | model == "Liebherr 132EC-H8")
 
+        {
+            availableModifications.add("Anchor 120HC/AHK-07");
+            availableModifications.add("Anchor 154HC/AHK-06");
+            availableModifications.add("Stationar undercarridge 120HC");
+            availableModifications.add("Stationar undercarridge 154HC");
 
+        } else if (model == "Liebherr 154EC-H10") {
+            availableModifications.add("Anchor 154HC/AHK-06");
+            availableModifications.add("Stationar undercarridge 154HC");
 
+        } else {
+            availableModifications.add("UnAvailableModifications");
+        }
+    }
+    public String [] getAvailableModifications (){
+        String[] arrayModifications = new String[availableModels.size()];
+        arrayModifications = availableModifications.toArray(arrayModifications);
+        return arrayModifications;
 
-
-
+    }
 
 }

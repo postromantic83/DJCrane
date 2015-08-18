@@ -70,7 +70,7 @@ public class PanelAction implements ActionListener {
 
             //clean and fill comb3 from crane class
             cranePanel.comb3.removeAllItems();
-            cranePanel.setComb3(crane.getAvailableModifications((String) cranePanel.comb2.getSelectedItem()));
+            cranePanel.setComb3((String) cranePanel.comb2.getSelectedItem());
             crane.setModel((String) cranePanel.comb2.getSelectedItem());
             crane.createControl(cranePanel, crane);
 

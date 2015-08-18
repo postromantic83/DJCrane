@@ -5,6 +5,7 @@ import view.ControlPanel;
 import view.CranePanel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by SashaNote on 06.08.2015.
@@ -19,7 +20,7 @@ public class TowerCrane extends AbstractCrane {
 
     public ArrayList<Section> getTower() {
 
-        return towerCollection;
+        return (ArrayList<Section>) Collections.EMPTY_LIST;
     }
 
     public double getHeight() {

@@ -110,7 +110,7 @@ public class CranePanel extends JPanel {
 
         panLeft.add(l2);
 
-//        panLeft.add(cp);
+
 
 
         pan1.add(l1);
@@ -202,21 +202,23 @@ public class CranePanel extends JPanel {
 
           craneStructure.setAvailableModels(producer);
 
-          String [] am = craneStructure.getAvailableModels();
+          String [] arrayModels = craneStructure.getAvailableModels();
 /*Метод заполняет модельный комбобокс*/
 
-        for (String s : am) {
+        for (String s : arrayModels) {
             comb2.addItem(s);
-//        System.out.println(s);
+
         }
     }
 
     /*  Adding modification method (comb3) */
 
-    public void setComb3(String[] am) {
-        for (String s : am) {
+    public void setComb3(String model) {
+        craneStructure.setAvailableModifications(model);
+        String [] arrayModifications = craneStructure.getAvailableModifications();
+        for (String s : arrayModifications) {
             comb3.addItem(s);
-//            System.out.println(s);
+
 
         }
 

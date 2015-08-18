@@ -25,7 +25,7 @@ public class ControlPanel extends JPanel {
 
     public  void setControl(ControlPanel lp) {
 
-        System.out.println("CONTROL_PANEL setControl - method!");
+
 
     };
 

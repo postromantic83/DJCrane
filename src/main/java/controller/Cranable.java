@@ -11,20 +11,19 @@ public interface Cranable {
 *
 * Constants for offline database mode
 *
+* later I refactor it
+*
 * */
 
 
     public boolean DATABASE_ACTIVATE = false;
 
-    //as soon as I connect to database constans will be useless
 
-
-    public final String POTAINMODELS[]={"Potain MDT-178","Potain MDT218J10", "Potain MCT-88"};
-    public final String EVERDIGMMODELS[]={"Everdigm KH-310"};
-    public final String variant[]={"На анкерах","На раме"};
 
     /*
     * Crane methods
+    * SRM: define main methods for all types of cranes
+    *
     * */
 
     void setModel (String model);
