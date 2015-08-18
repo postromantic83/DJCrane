@@ -19,6 +19,9 @@ import java.util.Iterator;
 
 /**
  * Created by Sokolov on 03.02.2015.
+ *
+ * SRM: draw model from tower collection
+ *
  */
 public class VisioPanel extends JPanel {
 
@@ -28,7 +31,7 @@ public class VisioPanel extends JPanel {
 
 
     VisioPanel() {
-
+        props = new PropertyMain();
     }
 
     public void setCollection(ArrayList collect) {
@@ -78,7 +81,7 @@ public class VisioPanel extends JPanel {
 
         BasicStroke pen1 = new BasicStroke(1);
         BasicStroke pen2 = new BasicStroke(2);
-        props = new PropertyMain();
+
 
 
         int x = props.getSTARTX();

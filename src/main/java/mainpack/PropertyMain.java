@@ -48,14 +48,14 @@ public class PropertyMain {
             fis = new FileInputStream("src/main/resources/DJCrane.properties");
             property.load(fis);
 
-            this.FIELD_WIDTH = Integer.valueOf(property.getProperty("FIELD_WIDTH", "1"));
-            this.FIELD_HEIGHT = Integer.valueOf(property.getProperty("FIELD_HEIGHT", "1"));
-            this.STARTX = Integer.valueOf(property.getProperty("STARTX", "1"));
-            this.STARTY = Integer.valueOf(property.getProperty("STARTY", "1"));
-            this.SCALE = Integer.valueOf(property.getProperty("SCALE", "1"));
+            this.FIELD_WIDTH = Integer.valueOf(property.getProperty("FIELD_WIDTH", "640"));
+            this.FIELD_HEIGHT = Integer.valueOf(property.getProperty("FIELD_HEIGHT", "480"));
+            this.STARTX = Integer.valueOf(property.getProperty("STARTX", "100"));
+            this.STARTY = Integer.valueOf(property.getProperty("STARTY", "100"));
+            this.SCALE = Integer.valueOf(property.getProperty("SCALE", "10"));
 
             logger.info("params readed");
-            logger.info("current params are: {} x {}", this.FIELD_WIDTH, this.FIELD_HEIGHT);
+//            logger.info("current params are: {} x {}", this.FIELD_WIDTH, this.FIELD_HEIGHT);
 
 
 

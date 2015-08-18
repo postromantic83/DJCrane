@@ -43,23 +43,23 @@ public class LiebherrCrane extends TowerCrane {
         private String modelName = "";
 
 
-        public Builder (String name){
+        private Builder (String name){
             this.modelName = name;}
 
-        public Builder s154hc168 (int val)
+        private Builder s154hc168 (int val)
         {s154hc168 = val; return this;}
-        public Builder s154hc1616 (int val)
+        private Builder s154hc1616 (int val)
         {s154hc1616=val; return this;}
-        public Builder s132hc125 (int val)
+        private Builder s132hc125 (int val)
         {s132hc125=val; return this;}
-        public Builder s132hc168 (int val)
+        private Builder s132hc168 (int val)
         {s132hc168=val; return this;}
 
-        public Builder s132hc5 (int val)
+        private Builder s132hc5 (int val)
         {s132hc5=val; return this;}
-        public Builder s132hc25 (int val)
+        private Builder s132hc25 (int val)
         {s132hc25=val; return this;}
-        public LiebherrCrane build ()
+        private LiebherrCrane build ()
         {return new LiebherrCrane(this);}
     }
 
