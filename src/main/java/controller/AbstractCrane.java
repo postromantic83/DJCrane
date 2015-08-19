@@ -5,7 +5,9 @@ import view.*;
 /**
  * Created by SashaNote on 05.08.2015.
  *
- * SRM: define main controller functions for all type of cranes (tower cranes, allterraincranes, autocranes ets.)
+ * SRP: define main controller functions for all type of cranes (tower cranes, allterraincranes, autocranes ets.)
+ *
+ * change request: adding new general crane params
  *
  */
 public abstract class AbstractCrane implements Cranable{

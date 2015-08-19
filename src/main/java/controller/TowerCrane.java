@@ -9,6 +9,11 @@ import java.util.Collections;
 
 /**
  * Created by SashaNote on 06.08.2015.
+ *
+ * SRP: this is base for tower crane models
+ *
+ * change request: adding new functions for all tower cranes
+ *
  */
 public class TowerCrane extends AbstractCrane {
 

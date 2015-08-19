@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 /**
  * Created by Sokolov on 03.02.2015.
  *
- * SRM: abstract factory for crane
+ * SRP: abstract factory for crane
+ *
+ * change request: adding new crane producer
  *
  */
 public class PanelAction implements ActionListener {

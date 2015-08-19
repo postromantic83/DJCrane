@@ -4,6 +4,11 @@ import view.CranePanel;
 
 /**
  * Created by sokolov on 19.02.2015.
+ *
+ * SRP: build Everdigm tower crane
+ *
+ * change request: extending tower functions
+ *
  */
 public class EverdigmCrane extends TowerCrane {
     CranePanel parent;

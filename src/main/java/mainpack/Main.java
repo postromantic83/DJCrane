@@ -8,7 +8,9 @@ import view.CranePanel;
  *
  * This is the launcher class
  *
- * SRM: start the application in current environment (desktop)
+ * SRP: start the application in current environment (desktop)
+ *
+ * will chnge only if I need special params for starting (such as localization or etc.)
  *
  */
 public class Main {

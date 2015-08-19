@@ -4,6 +4,8 @@ import view.CranePanel;
 
 /**
  * Created by ShurikNote on 29.07.2015.
+ *
+ * SRP: changing general methods
  */
 public interface Cranable {
 

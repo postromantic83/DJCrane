@@ -10,7 +10,9 @@ import java.awt.*;
 /**
  * Created by Sokolov on 02.02.2015.
  *
- * SRM: create main program field
+ * SRP: create main program field
+ *
+ * change request: configuring main program form
  *
  */
 public class CranePanel extends JPanel {

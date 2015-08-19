@@ -10,6 +10,11 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by sokolov on 25.02.2015.
+ *
+ * SRP: create controls for Liebherr cranes
+ *
+ * change request: adding or modifing controls
+ *
  */
 public class LiebherrControl extends ControlPanel {
 

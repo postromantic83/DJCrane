@@ -2,7 +2,10 @@ package model;
 
 /**
  * Created by Sokolov on 04.02.2015.
- * new package
+ *
+ * SRP: super class for tower sections
+ *
+ * Change request: adding new section params or functions
  *
  */
 public class Section {

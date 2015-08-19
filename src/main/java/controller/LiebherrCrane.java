@@ -10,7 +10,9 @@ import java.util.ArrayList;
 /**
  * Created by Sokolov on 03.02.2015.
  *
- * SRM: build Liebherr towers
+ * SRP: build Liebherr towers
+ *
+ * change request: extending tower functions
  *
  */
 

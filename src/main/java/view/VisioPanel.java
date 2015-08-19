@@ -20,7 +20,9 @@ import java.util.Iterator;
 /**
  * Created by Sokolov on 03.02.2015.
  *
- * SRM: draw model from tower collection
+ * SRP: draw model from tower collection
+ *
+ * change request: adding new elements to draw
  *
  */
 public class VisioPanel extends JPanel {

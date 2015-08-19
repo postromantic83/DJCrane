@@ -7,7 +7,10 @@ import javax.swing.*;
 /**
  * Created by sokolov on 16.02.2015.
  *
- * SRM: factory of controlled params
+ * SRP: factory of controlled params
+ *
+ * change request: adding new getters
+ *
  */
 public class ControlPanel extends JPanel {
 

@@ -4,6 +4,12 @@ import view.CranePanel;
 
 /**
  * Created by sokolov on 19.02.2015.
+ *
+ * SRP: build Potain tower
+ *
+ * change request: extending tower functions
+ *
+ *
  */
 public class PotainCrane extends TowerCrane {
 

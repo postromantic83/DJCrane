@@ -3,7 +3,10 @@ package mainpack;
 /**
  * Created by ShurikNote on 28.07.2015.
  *
- * SRM: read program constants
+ * SRP: read program constants
+ *
+ * change request: adding or changing application params
+ *
  */
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

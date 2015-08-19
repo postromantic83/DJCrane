@@ -6,7 +6,9 @@ import java.util.ArrayList;
 /**
  * Created by SashaNote on 12.08.2015.
  *
- * SRM: get all modifications data
+ * SRP: get all modifications data
+ *
+ * change request: changing data source
  *
  */
 public class CraneStructure {
