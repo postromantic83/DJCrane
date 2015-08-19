@@ -65,6 +65,7 @@ public class PropertyMain {
             }
              catch (IOException e) {
             logger.error("Error reading property file, creating default params!");
+
             this.FIELD_WIDTH = 1024;
             this.FIELD_HEIGHT = 768;
             this.STARTX = 200;
