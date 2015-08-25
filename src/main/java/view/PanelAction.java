@@ -21,7 +21,7 @@ public class PanelAction implements ActionListener {
 //    private JPanel panControl;
     private ControlPanel controlPanel;
 
-    public PanelAction(CranePanel cranePanel, ControlPanel controlPanel) {
+    public PanelAction(CraneComboboxPanel cranePanel, ControlPanel controlPanel) {
 
 
         this.cranePanel = cranePanel;

@@ -23,7 +23,7 @@ public class CranePanel extends JPanel {
 
     //get params from properties
     PropertyMain proper = new PropertyMain();
-    CraneStructure craneStructure = new CraneStructure();
+
 
 
 
@@ -41,9 +41,7 @@ public class CranePanel extends JPanel {
 
 
     JPanel panLeft = new JPanel();
-    JComboBox comb1 = new JComboBox<String>(craneStructure.getAvailableProducers());
-    JComboBox comb2 = new JComboBox<String>();
-    JComboBox comb3 = new JComboBox<String>();
+
 
     VisioPanel mp1 = new VisioPanel();
 
@@ -99,9 +97,7 @@ public class CranePanel extends JPanel {
 
 
 
-        panUp.add(comb1);
-        panUp.add(comb2);
-        panUp.add(comb3);
+
 
         JTextField jt1 = new JTextField("Panel1 FlowLay");
         JLabel l1 = new JLabel("MyPanel (Graphics)");
@@ -146,7 +142,7 @@ public class CranePanel extends JPanel {
 
         pan.add("West", panLeft);
         pan.add("East", panRight);
-        pan.add("North", panUp);
+//        pan.add("North", panUp);
         pan.add("Center", pan1);
 
 
@@ -159,14 +155,12 @@ public class CranePanel extends JPanel {
 
 
         //registering sourcers
-        ControlPanel controlPanel = new ControlPanel();
-
-        PanelAction panelAction = new PanelAction(this, controlPanel);
 
 
-        comb1.addActionListener(panelAction);
-        comb2.addActionListener(panelAction);
-        comb3.addActionListener(panelAction);
+
+
+
+
 
     }
 
@@ -198,29 +192,5 @@ public class CranePanel extends JPanel {
     }
 
 
-      public void setComb2(String producer) {
 
-          craneStructure.setAvailableModels(producer);
-
-          String [] arrayModels = craneStructure.getAvailableModels();
-/*Метод заполняет модельный комбобокс*/
-
-        for (String s : arrayModels) {
-            comb2.addItem(s);
-
-        }
-    }
-
-    /*  Adding modification method (comb3) */
-
-    public void setComb3(String model) {
-        craneStructure.setAvailableModifications(model);
-        String [] arrayModifications = craneStructure.getAvailableModifications();
-        for (String s : arrayModifications) {
-            comb3.addItem(s);
-
-
-        }
-
-    }
 }
