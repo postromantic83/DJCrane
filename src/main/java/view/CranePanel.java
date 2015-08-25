@@ -19,6 +19,7 @@ public class CranePanel extends JPanel {
 
 
     private JLabel label;
+    private CranePanelMenu cranePanelMenu;
 
     //get params from properties
     PropertyMain proper = new PropertyMain();
@@ -46,9 +47,7 @@ public class CranePanel extends JPanel {
 
     VisioPanel mp1 = new VisioPanel();
 
-    JMenuBar jmb = new JMenuBar();
-    JMenu jmFile = new JMenu("Menu");
-    JMenuItem jmSave = new JMenuItem("Save as png");
+
 
 
     public CranePanel() {
@@ -95,9 +94,8 @@ public class CranePanel extends JPanel {
         pan2.setLayout(g1);
         panLeft.setLayout(new BoxLayout(panLeft, BoxLayout.Y_AXIS));
 
-        jmb.add(jmFile);
-        jmFile.add(jmSave);
-        panUp.add(jmb);
+        cranePanelMenu = new CranePanelMenu();
+        panUp.add(cranePanelMenu.getMenu());
 
 
 
