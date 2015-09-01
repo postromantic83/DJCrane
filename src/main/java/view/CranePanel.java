@@ -20,6 +20,7 @@ public class CranePanel extends JPanel {
 
     private JLabel label;
     private CranePanelMenu cranePanelMenu;
+    private CraneComboboxPanel craneComboboxPanel;
 
     //get params from properties
     PropertyMain proper = new PropertyMain();
@@ -45,7 +46,7 @@ public class CranePanel extends JPanel {
 
     VisioPanel mp1 = new VisioPanel();
 
-
+    public CraneComboboxPanel getComboboxPanel (){return this.craneComboboxPanel;}
 
 
     public CranePanel() {
@@ -86,7 +87,7 @@ public class CranePanel extends JPanel {
 
 
         pan1.setLayout(new BoxLayout(pan1, BoxLayout.Y_AXIS));
-        panUp.setLayout(new BoxLayout(panUp, BoxLayout.X_AXIS));
+        panUp.setLayout(new BoxLayout(panUp, BoxLayout.Y_AXIS));
 
 
         pan2.setLayout(g1);
@@ -94,6 +95,9 @@ public class CranePanel extends JPanel {
 
         cranePanelMenu = new CranePanelMenu();
         panUp.add(cranePanelMenu.getMenu());
+
+        craneComboboxPanel = new CraneComboboxPanel(this);
+        panUp.add(craneComboboxPanel.getComboboxPanel());
 
 
 
@@ -142,7 +146,7 @@ public class CranePanel extends JPanel {
 
         pan.add("West", panLeft);
         pan.add("East", panRight);
-//        pan.add("North", panUp);
+        pan.add("North", panUp);
         pan.add("Center", pan1);
 
 
@@ -165,11 +169,14 @@ public class CranePanel extends JPanel {
     }
 
 
-    public void addContol(Container container) {
+    public void addContol(JPanel controlPanel) {
 
 
         //control panel adding
-        panLeft.add(container);
+        panLeft.removeAll();
+        panLeft.add(controlPanel);
+        System.out.println(controlPanel);
+
 
 
     }

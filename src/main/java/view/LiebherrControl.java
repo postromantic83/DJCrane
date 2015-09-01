@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 public class LiebherrControl extends ControlPanel {
 
     ControlPanel lp;
+    CraneComboboxPanel craneComboboxPanel;
 
 
     int val1;
@@ -28,7 +29,7 @@ public class LiebherrControl extends ControlPanel {
         return "Liebherrcontrol!";
     }
 
-//    PanelAction panelAction = new PanelAction(this);
+
 
     TowerCrane crane;
     CranePanel cranePanel;
@@ -70,29 +71,19 @@ public class LiebherrControl extends ControlPanel {
     LiebherrControl (){}
 
 
-    public LiebherrControl(CranePanel cp, LiebherrCrane crane){
-        this.cranePanel = cp;
+    public LiebherrControl( TowerCrane crane){
+
         this.crane= crane;
 
     }
 
-//    LiebherrControl (LiebherrCrane model){
-//        this.crane = model;
-//    }
-
-    /*public Container createPanel (Crane inputCrane) {
-        this.crane = inputCrane;
-
-        ControlPanel panel = new ControlPanel();
-        JButton btt = new JButton("Liebherr 120HC");
-        panel.add(btt);
+    public JPanel getControlPanel(){return panControl;}
 
 
-        return panel;
-    }*/
+
         @Override
-        public void setControl (ControlPanel lp){
-        this.lp = lp;
+        public void setControl (TowerCrane crane){
+
 
 
 
@@ -188,8 +179,8 @@ public class LiebherrControl extends ControlPanel {
 
 
 
-            cranePanel.panLeft.removeAll();
-            cranePanel.panLeft.add(panControl);
+//            cranePanel.panLeft.removeAll();
+//            cranePanel.panLeft.add(panControl);
 
 
 
@@ -389,16 +380,4 @@ public class LiebherrControl extends ControlPanel {
     public int getS154HC_1616() {return Integer.parseInt(tx154_1616.getText());}
 
 
-    /*@Override
-    public void actionPerformed(ActionEvent e) {
-        Object src = e.getSource();
-
-        if (src == this.bt120_25dec) {
-
-            System.out.println("BUTTON PRESSED!");
-        }
-
-
-
-    }*/
 }

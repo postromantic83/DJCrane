@@ -9,7 +9,7 @@ public class CranePanelMenu extends JMenuBar{
 
     private JMenuBar jmb;
 
-    protected CranePanelMenu(){
+    public CranePanelMenu(){
 
         jmb = new JMenuBar();
 

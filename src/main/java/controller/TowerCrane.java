@@ -2,6 +2,7 @@ package controller;
 
 import model.Section;
 import view.ControlPanel;
+import view.CraneComboboxPanel;
 import view.CranePanel;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class TowerCrane extends AbstractCrane {
         return heightUnderJib;
     }
 
-    public void createControl(CranePanel cranePanel, TowerCrane crane) {
+    public void createControl(TowerCrane crane) {
     }
 
 

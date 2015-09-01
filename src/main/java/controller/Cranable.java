@@ -34,7 +34,7 @@ public interface Cranable {
     String getProducer();
     String [] getAvailableModels();
 
-    void createControl(CranePanel cranePanel, TowerCrane crane);
+    void createControl(TowerCrane cranePanel, CranePanel crane);
 
 
 }

@@ -9,29 +9,33 @@ import javax.swing.*;
  */
 public class CraneComboboxPanel extends JPanel {
 
-    JPanel comboPanel;
-    CraneStructure craneStructure = new CraneStructure();
-
+    private JPanel comboPanel;
+    private CraneStructure craneStructure = new CraneStructure();
+    private CranePanel cranePanel;
 
     JComboBox comb1 = new JComboBox<String>(craneStructure.getAvailableProducers());
     JComboBox comb2 = new JComboBox<String>();
     JComboBox comb3 = new JComboBox<String>();
 
-    CraneComboboxPanel(){
+    CraneComboboxPanel(CranePanel cranePanel){
+        this.cranePanel = cranePanel;
         comboPanel = new JPanel();
         comboPanel.add(comb1);
         comboPanel.add(comb2);
         comboPanel.add(comb3);
 
-        ControlPanel controlPanel = new ControlPanel();
-        PanelAction panelAction = new PanelAction(this, controlPanel);
+//        ControlPanel controlPanel = new ControlPanel();
+        PanelAction panelAction = new PanelAction(this, cranePanel);
 
         comb1.addActionListener(panelAction);
         comb2.addActionListener(panelAction);
         comb3.addActionListener(panelAction);
 
 
+
     }
+    protected JPanel getComboboxPanel(){return comboPanel;}
+
 
     public void setComb2(String producer) {
 

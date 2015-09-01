@@ -22,6 +22,7 @@ public class PropertyMainTest {
     @Before
     public void setUp (){
         proper = new PropertyMain();
+        proper.loadParams();
         }
 
 

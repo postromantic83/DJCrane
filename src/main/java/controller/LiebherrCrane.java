@@ -1,10 +1,9 @@
 package controller;
 
 import model.Section;
-import view.ControlPanel;
-import view.CranePanel;
-import view.LiebherrControl;
+import view.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -22,6 +21,7 @@ public class LiebherrCrane extends TowerCrane {
 
 
     CranePanel cranePanel;
+    CraneComboboxPanel craneComboboxPanel;
     ControlPanel lp;
     LiebherrCrane crane132;
 
@@ -134,9 +134,9 @@ public class LiebherrCrane extends TowerCrane {
 
 
 
-    public LiebherrCrane (CranePanel cranePanel) {
+    public LiebherrCrane (CraneComboboxPanel craneComboboxPanel) {
 
-        this.cranePanel = cranePanel;
+        this.craneComboboxPanel = craneComboboxPanel;
 
     }
 
@@ -170,10 +170,14 @@ public class LiebherrCrane extends TowerCrane {
     //current active controller panel
     //return later (suppressed!)
 
-    public void createControl (CranePanel cranePanel, TowerCrane crane){
+    public void createControl ( TowerCrane crane, CranePanel cranePanel){
 
-        ControlPanel lp = new LiebherrControl(cranePanel, this);
-        lp.setControl(lp);
+        ControlPanel lp = new LiebherrControl(crane);
+        lp.setControl(crane);
+//        CranePanelMenu cranePanelMenu = new CranePanelMenu();
+
+        cranePanel.addContol(lp.getControlPanel());
+
     }
 
 

@@ -16,8 +16,13 @@ import view.CranePanel;
 public class Main {
     public static void main(String[] args) {
 
+        PropertyMain prop = new PropertyMain();
+        prop.loadParams();
+
+
 
         //just now only towercranea, then abstractcrain will be extended for other cranes
+
 
         TowerCrane crane = new TowerCrane();
         CranePanel cranePanel = new CranePanel();

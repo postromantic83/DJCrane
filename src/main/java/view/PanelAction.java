@@ -16,18 +16,16 @@ import java.awt.event.ActionListener;
  */
 public class PanelAction implements ActionListener {
 
-    private CranePanel cranePanel;
+
+    private CraneComboboxPanel craneComboboxPanel;
     private TowerCrane crane;
-//    private JPanel panControl;
-    private ControlPanel controlPanel;
+    private CranePanel cranePanel;
 
-    public PanelAction(CraneComboboxPanel cranePanel, ControlPanel controlPanel) {
+    public PanelAction(CraneComboboxPanel craneComboboxPanel, CranePanel cranePanel) {
 
 
+        this.craneComboboxPanel = craneComboboxPanel;
         this.cranePanel = cranePanel;
-        this.controlPanel = controlPanel;
-
-
 
     }
 
@@ -36,60 +34,49 @@ public class PanelAction implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         Object src = actionEvent.getSource();
 
-               //set customer
-       if (src==cranePanel.comb1) {
 
-           if (cranePanel.comb1.getSelectedItem() == "Liebherr") {
+            //set customer
+            if (src == craneComboboxPanel.comb1) {
 
-               crane = new LiebherrCrane(cranePanel);
+                if (craneComboboxPanel.comb1.getSelectedItem() == "Liebherr") {
 
-               }
-           else if (cranePanel.comb1.getSelectedItem() == "Potain") {
+                crane = new LiebherrCrane(craneComboboxPanel);
 
-               crane = new PotainCrane(cranePanel);
+            } else if (craneComboboxPanel.comb1.getSelectedItem() == "Potain") {
 
-           }
-           else if (cranePanel.comb1.getSelectedItem() == "Everdigm") {
+                crane = new PotainCrane(craneComboboxPanel);
 
-               crane = new EverdigmCrane(cranePanel);
+            } else if (craneComboboxPanel.comb1.getSelectedItem() == "Everdigm") {
 
-           }
-           //clean and fill comb3 from crane class
-           cranePanel.comb2.removeAllItems();
-           cranePanel.setComb2((String) cranePanel.comb1.getSelectedItem());
-//           cranePanel.setComb2(crane.getAvailableModels());
-           }
+                crane = new EverdigmCrane(craneComboboxPanel);
 
+            }
+            //clean and fill comb3 from crane class
+            craneComboboxPanel.comb2.removeAllItems();
+            craneComboboxPanel.setComb2((String) craneComboboxPanel.comb1.getSelectedItem());
 
-
+        }
 
 
         //set model
-        if (src==cranePanel.comb2){
-
-
+        if (src == craneComboboxPanel.comb2) {
 
 
             //clean and fill comb3 from crane class
-            cranePanel.comb3.removeAllItems();
-            cranePanel.setComb3((String) cranePanel.comb2.getSelectedItem());
-            crane.setModel((String) cranePanel.comb2.getSelectedItem());
-            crane.createControl(cranePanel, crane);
+            craneComboboxPanel.comb3.removeAllItems();
+            craneComboboxPanel.setComb3((String) craneComboboxPanel.comb2.getSelectedItem());
+            crane.setModel((String) craneComboboxPanel.comb2.getSelectedItem());
 
 
+            crane.createControl(crane, cranePanel);
 
-            }
-
-
-
-//        prepareCrane();
 
         }
 
-        public void prepareCrane (){
 
-        }
+    }
 
+    public TowerCrane getCrane () {return crane;}
 
     }
 

@@ -26,11 +26,13 @@ public class ControlPanel extends JPanel {
         return "CONTROL_PANEL";
     }
 
-    public  void setControl(ControlPanel lp) {
+    public  void setControl(TowerCrane crane) {
 
 
 
     };
+
+ public JPanel getControlPanel(){return null;}
 
     //getters for sections
     public int getS120HC_25 (){ return 0;}

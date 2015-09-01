@@ -1,5 +1,6 @@
 package controller;
 
+import view.CraneComboboxPanel;
 import view.CranePanel;
 
 /**
@@ -11,11 +12,11 @@ import view.CranePanel;
  *
  */
 public class EverdigmCrane extends TowerCrane {
-    CranePanel parent;
+    CraneComboboxPanel parent;
 
 
-    public EverdigmCrane (CranePanel cranePanel){
-        this.parent = cranePanel;
+    public EverdigmCrane (CraneComboboxPanel craneComboboxPanel){
+        this.parent = craneComboboxPanel;
 
 
 

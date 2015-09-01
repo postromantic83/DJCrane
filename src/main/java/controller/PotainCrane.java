@@ -1,5 +1,6 @@
 package controller;
 
+import view.CraneComboboxPanel;
 import view.CranePanel;
 
 /**
@@ -13,14 +14,14 @@ import view.CranePanel;
  */
 public class PotainCrane extends TowerCrane {
 
-    CranePanel parent;
+    CraneComboboxPanel parent;
 
 
 
 
-    public PotainCrane (CranePanel cranePanel) {
+    public PotainCrane (CraneComboboxPanel craneComboboxPanel) {
 
-        this.parent = cranePanel;
+        this.parent = craneComboboxPanel;
 
     }
 

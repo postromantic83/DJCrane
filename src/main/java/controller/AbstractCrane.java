@@ -43,7 +43,7 @@ public abstract class AbstractCrane implements Cranable{
     }
 
     @Override
-    public void createControl(CranePanel cranePanel, TowerCrane crane) {
+    public void createControl(TowerCrane cranePanel, CranePanel crane) {
         //do nothing
 
     }
