@@ -18,11 +18,9 @@ public class LiebherrCrane extends TowerCrane {
 
 
 
+    private CraneComboboxPanel craneComboboxPanel;
 
-    CranePanel cranePanel;
-    CraneComboboxPanel craneComboboxPanel;
-    ControlPanel lp;
-    LiebherrCrane concreteCrane132;
+    private LiebherrCrane concreteCrane132;
 
 
 
@@ -120,8 +118,8 @@ public class LiebherrCrane extends TowerCrane {
 
     }
 
-
-    public ArrayList getTower(){
+    @Override
+    public ArrayList <Section> getTower(){
         return towerSectionCollection;
     }
 
@@ -144,10 +142,9 @@ public class LiebherrCrane extends TowerCrane {
 
     public void createControl ( TowerCrane crane, CranePanel cranePanel){
 
-        ControlPanel lp = new LiebherrControl(crane,cranePanel);
-        lp.setControl(crane);
-        cranePanel.addContol(lp.getControlPanel());
-
+        ControlPanel controlPanel = new LiebherrControl(crane,cranePanel);
+        controlPanel.setControl(crane);
+        cranePanel.addContol(controlPanel.getControlPanel());
     }
 
 

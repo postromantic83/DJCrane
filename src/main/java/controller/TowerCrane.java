@@ -18,21 +18,19 @@ import java.util.Collections;
  */
 public class TowerCrane extends AbstractCrane {
 
-
     protected ArrayList<Section> towerCollection = new ArrayList<Section>();
 
-    public void makeTower() {
-    }
+    public void makeTower() {}
 
     public ArrayList<Section> getTower() {
-
-        return (ArrayList<Section>)  Collections.EMPTY_LIST;
+        return (ArrayList<Section>) Collections.EMPTY_LIST;
     }
 
     public double getHeight() {
         double height = 0;
         return height;
     }
+
     public double getHeightUnderJib(double height) {
         double heightUnderJib = 0;
         return heightUnderJib;
@@ -41,8 +39,8 @@ public class TowerCrane extends AbstractCrane {
     public void createControl(TowerCrane crane) {
     }
 
-
     public TowerCrane setConcreteTowerCrane(ControlPanel lc) {
         return null;
     }
+
 }

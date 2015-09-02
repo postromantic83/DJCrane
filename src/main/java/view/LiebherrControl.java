@@ -66,16 +66,30 @@ public class LiebherrControl extends ControlPanel {
     JTextField tx154_1616 = new JTextField("0");
 
 
-
-
     public LiebherrControl(TowerCrane crane, CranePanel cranePanel){
-
         this.crane= crane;
         this.cranePanel = cranePanel;
-
     }
 
+
     public JPanel getControlPanel(){return panControl;}
+
+    @Override
+    public int getS120HC_25() {
+        return Integer.parseInt(tx120_25.getText());
+    }
+    @Override
+    public int getS120HC_50() {return Integer.parseInt(tx120_50.getText());}
+    @Override
+    public int getS120HC_125() {
+        return Integer.parseInt(tx120_125.getText());
+    }
+    @Override
+    public int getS132HC_168() {return Integer.parseInt(tx132_168.getText());}
+    @Override
+    public int getS154HC_168() {return Integer.parseInt(tx154_168.getText());}
+    @Override
+    public int getS154HC_1616() {return Integer.parseInt(tx154_1616.getText());}
 
 
 
@@ -362,22 +376,7 @@ public class LiebherrControl extends ControlPanel {
 
     //overrided getters to GUI
 
-    @Override
-    public int getS120HC_25() {
-        return Integer.parseInt(tx120_25.getText());
-    }
-    @Override
-    public int getS120HC_50() {return Integer.parseInt(tx120_50.getText());}
-    @Override
-    public int getS120HC_125() {
-        return Integer.parseInt(tx120_125.getText());
-    }
-    @Override
-    public int getS132HC_168() {return Integer.parseInt(tx132_168.getText());}
-    @Override
-    public int getS154HC_168() {return Integer.parseInt(tx154_168.getText());}
-    @Override
-    public int getS154HC_1616() {return Integer.parseInt(tx154_1616.getText());}
+
 
 
 }

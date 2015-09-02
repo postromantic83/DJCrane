@@ -74,7 +74,7 @@ public class CranePanel extends JPanel {
         JPanel panControl = new JPanel();
 
         GridLayout g1 = new GridLayout(4, 2);
-        FlowLayout f1 = new FlowLayout();
+
         GridBagLayout gb1 = new GridBagLayout();
         GridBagLayout gb2 = new GridBagLayout();
 
@@ -175,7 +175,7 @@ public class CranePanel extends JPanel {
         //control panel adding
         panLeft.removeAll();
         panLeft.add(controlPanel);
-        System.out.println(controlPanel);
+
 
 
 

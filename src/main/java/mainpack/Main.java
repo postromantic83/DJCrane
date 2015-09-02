@@ -19,15 +19,8 @@ public class Main {
         PropertyMain prop = new PropertyMain();
         prop.loadParams();
 
-
-
         //just now only towercranea, then abstractcrain will be extended for other cranes
-
-
         TowerCrane crane = new TowerCrane();
         CranePanel cranePanel = new CranePanel();
-
     }
-
-
 }

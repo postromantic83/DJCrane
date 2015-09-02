@@ -76,9 +76,21 @@ public class CraneStructure {
             availableModifications.add("Anchor 154HC/AHK-06");
             availableModifications.add("Stationar undercarridge 154HC");
 
-        } else {
+        } else
+
+        if (model == "Potain MDT-178")
+
+        {
+            availableModifications.add("Anchor P41A");
+            availableModifications.add("Anchor R40A");
+            availableModifications.add("Stationar undercarridge S41");
+
+        }
+        else {
             availableModifications.add("UnAvailableModifications");
         }
+
+
     }
     public String [] getAvailableModifications (){
         String[] arrayModifications = new String[availableModels.size()];
