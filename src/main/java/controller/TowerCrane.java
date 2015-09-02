@@ -26,7 +26,7 @@ public class TowerCrane extends AbstractCrane {
 
     public ArrayList<Section> getTower() {
 
-        return (ArrayList<Section>) Collections.EMPTY_LIST;
+        return (ArrayList<Section>)  Collections.EMPTY_LIST;
     }
 
     public double getHeight() {
@@ -42,7 +42,7 @@ public class TowerCrane extends AbstractCrane {
     }
 
 
-    public TowerCrane setTowerCombination(CranePanel parent, ControlPanel lc) {
+    public TowerCrane setConcreteTowerCrane(ControlPanel lc) {
         return null;
     }
 }

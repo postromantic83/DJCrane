@@ -1,5 +1,6 @@
 package view;
 
+import controller.ComboBoxPanelAction;
 import model.CraneStructure;
 
 import javax.swing.*;
@@ -13,52 +14,51 @@ public class CraneComboboxPanel extends JPanel {
     private CraneStructure craneStructure = new CraneStructure();
     private CranePanel cranePanel;
 
-    JComboBox comb1 = new JComboBox<String>(craneStructure.getAvailableProducers());
-    JComboBox comb2 = new JComboBox<String>();
-    JComboBox comb3 = new JComboBox<String>();
+    private JComboBox producerComboBox = new JComboBox<String>(craneStructure.getAvailableProducers());
+    private JComboBox modelComboBox = new JComboBox<String>();
+    private JComboBox modificationComboBox = new JComboBox<String>();
 
-    CraneComboboxPanel(CranePanel cranePanel){
+    public JComboBox getProducerComboBox () {return producerComboBox;}
+    public JComboBox getModelComboBox () {return modelComboBox;}
+    public JComboBox getModificationComboBox () {return modificationComboBox;}
+
+
+
+
+    public CraneComboboxPanel(CranePanel cranePanel){
         this.cranePanel = cranePanel;
         comboPanel = new JPanel();
-        comboPanel.add(comb1);
-        comboPanel.add(comb2);
-        comboPanel.add(comb3);
+        comboPanel.add(producerComboBox);
+        comboPanel.add(modelComboBox);
+        comboPanel.add(modificationComboBox);
+        ComboBoxPanelAction comboBoxPanelAction = new ComboBoxPanelAction(this, cranePanel);
 
-//        ControlPanel controlPanel = new ControlPanel();
-        PanelAction panelAction = new PanelAction(this, cranePanel);
-
-        comb1.addActionListener(panelAction);
-        comb2.addActionListener(panelAction);
-        comb3.addActionListener(panelAction);
-
-
-
+        producerComboBox.addActionListener(comboBoxPanelAction);
+        modelComboBox.addActionListener(comboBoxPanelAction);
+        modificationComboBox.addActionListener(comboBoxPanelAction);
     }
     protected JPanel getComboboxPanel(){return comboPanel;}
 
 
-    public void setComb2(String producer) {
-
+    public void fillModelComboBox(String producer) {
         craneStructure.setAvailableModels(producer);
-
         String [] arrayModels = craneStructure.getAvailableModels();
-
+        modelComboBox.removeAllItems();
 
         for (String s : arrayModels) {
-            comb2.addItem(s);
-
+            modelComboBox.addItem(s);
         }
     }
 
-    /*  Adding modification method (comb3) */
+    /*  Adding modification method (modificationComboBox) */
 
-    public void setComb3(String model) {
+    public void fillModificationComboBox(String model) {
         craneStructure.setAvailableModifications(model);
         String [] arrayModifications = craneStructure.getAvailableModifications();
+        modificationComboBox.removeAllItems();
+
         for (String s : arrayModifications) {
-            comb3.addItem(s);
-
-
+            modificationComboBox.addItem(s);
         }
 
     }

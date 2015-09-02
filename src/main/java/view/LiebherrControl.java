@@ -1,6 +1,5 @@
 package view;
 
-import controller.LiebherrCrane;
 import controller.TowerCrane;
 
 import javax.swing.*;
@@ -18,8 +17,6 @@ import java.awt.event.ActionListener;
  */
 public class LiebherrControl extends ControlPanel {
 
-    ControlPanel lp;
-    CraneComboboxPanel craneComboboxPanel;
 
 
     int val1;
@@ -68,12 +65,13 @@ public class LiebherrControl extends ControlPanel {
     JTextField tx154_168 = new JTextField("0");
     JTextField tx154_1616 = new JTextField("0");
 
-    LiebherrControl (){}
 
 
-    public LiebherrControl( TowerCrane crane){
+
+    public LiebherrControl(TowerCrane crane, CranePanel cranePanel){
 
         this.crane= crane;
+        this.cranePanel = cranePanel;
 
     }
 
@@ -171,7 +169,6 @@ public class LiebherrControl extends ControlPanel {
             panControl.add(tx120_50);
             panControl.add(tx120_125);
             panControl.add(tx132_168);
-
             panControl.add(tx154_168);
             panControl.add(tx154_1616);
 
@@ -351,10 +348,13 @@ public class LiebherrControl extends ControlPanel {
 
     private void setTower(){
 
-        crane = crane.setTowerCombination(cranePanel,this);
+        crane = crane.setConcreteTowerCrane(this);
         crane.makeTower();
+
+
         cranePanel.mp1.setCollection(crane.getTower());
         cranePanel.mp1.repaint();
+
 
         cranePanel.hHeader1.setText(Double.toString(crane.getHeight()));
         cranePanel.hHeader2.setText(Double.toString(crane.getHeightUnderJib(crane.getHeight())));

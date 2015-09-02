@@ -3,7 +3,6 @@ package controller;
 import model.Section;
 import view.*;
 
-import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +22,7 @@ public class LiebherrCrane extends TowerCrane {
     CranePanel cranePanel;
     CraneComboboxPanel craneComboboxPanel;
     ControlPanel lp;
-    LiebherrCrane crane132;
+    LiebherrCrane concreteCrane132;
 
 
 
@@ -75,7 +74,7 @@ public class LiebherrCrane extends TowerCrane {
     }
 
 
-    ArrayList<Section> col1 = new ArrayList<Section>();
+    ArrayList<Section> towerSectionCollection = new ArrayList<Section>();
 
 
     @Override
@@ -91,30 +90,30 @@ public class LiebherrCrane extends TowerCrane {
     public void makeTower (){
 
         n=1;
-        col1.clear();
+        towerSectionCollection.clear();
 
         for ( i=1;i<=s154hc1616;i++){
-            col1.add(new Section("sect154HC1616",n));
+            towerSectionCollection.add(new Section("sect154HC1616", n));
             n++;
         }
         for ( i=1;i<=s154hc168;i++){
-            col1.add(new Section("sect154HC168",n));
+            towerSectionCollection.add(new Section("sect154HC168", n));
             n++;
         }
         for ( i=1;i<=s132hc168;i++){
-            col1.add(new Section("sect132HC168",n));
+            towerSectionCollection.add(new Section("sect132HC168", n));
             n++;
         }
         for ( i=1;i<=s132hc125;i++){
-            col1.add(new Section("sect132HC125",n));
+            towerSectionCollection.add(new Section("sect132HC125", n));
             n++;
         }
         for ( i=1;i<=s132hc5;i++){
-            col1.add(new Section("sect132HC5",n));
+            towerSectionCollection.add(new Section("sect132HC5", n));
             n++;
         }
         for ( i=1;i<=s132hc25;i++){
-            col1.add(new Section("sect132HC25",n));
+            towerSectionCollection.add(new Section("sect132HC25", n));
             n++;
         }
 
@@ -122,13 +121,8 @@ public class LiebherrCrane extends TowerCrane {
     }
 
 
-
-
-
-
-
     public ArrayList getTower(){
-        return col1;
+        return towerSectionCollection;
     }
 
 
@@ -141,30 +135,8 @@ public class LiebherrCrane extends TowerCrane {
     }
 
 
- /*   public String[] getAvailableModels(){
-        final String LIEBHERRMODELS[]={"Liebherr 112EC-H8","Liebherr 132EC-H8", "Liebherr 154EC-H10"};
-        return LIEBHERRMODELS;
-    }*/
-
-    public String [] getAvailableModifications(String mod){
 
 
-        if (mod=="Liebherr 112EC-H8" | mod=="Liebherr 132EC-H8" )
-
-        {
-            String MODIFS[] = {"Anchor 120HC/AHK-07", "Anchor 154HC/AHK-06","Stationar undercarridge 120HC", "Stationar undercarridge 154HC"};
-            return MODIFS;
-        }else if ( mod == "Liebherr 154EC-H10"){
-            String MODIFS[] = { "Anchor 154HC/AHK-06", "Stationar undercarridge 154HC"};
-            return MODIFS;
-        }
-
-
-        else {
-            String MODIFS[] = {"- - -"};
-            return MODIFS;
-        }
-    }
 
 
     //current active controller panel
@@ -172,10 +144,8 @@ public class LiebherrCrane extends TowerCrane {
 
     public void createControl ( TowerCrane crane, CranePanel cranePanel){
 
-        ControlPanel lp = new LiebherrControl(crane);
+        ControlPanel lp = new LiebherrControl(crane,cranePanel);
         lp.setControl(crane);
-//        CranePanelMenu cranePanelMenu = new CranePanelMenu();
-
         cranePanel.addContol(lp.getControlPanel());
 
     }
@@ -185,19 +155,20 @@ public class LiebherrCrane extends TowerCrane {
 
 
 
-    public TowerCrane setTowerCombination(CranePanel parent, ControlPanel lc) {
+    public TowerCrane setConcreteTowerCrane(ControlPanel liebherrControl) {
 
-        crane132 = new Builder("Liebherr 132EC-H8")
-                .s132hc25(lc.getS120HC_25())
-                .s132hc5(lc.getS120HC_50())
-                .s132hc125(lc.getS120HC_125())
-                .s132hc168(lc.getS132HC_168())
-                .s154hc168(lc.getS154HC_168())
-                .s154hc1616(lc.getS154HC_1616())
+        concreteCrane132 = new Builder("Liebherr 132EC-H8")
+                .s132hc25(liebherrControl.getS120HC_25())
+                .s132hc5(liebherrControl.getS120HC_50())
+                .s132hc125(liebherrControl.getS120HC_125())
+                .s132hc168(liebherrControl.getS132HC_168())
+                .s154hc168(liebherrControl.getS154HC_168())
+                .s154hc1616(liebherrControl.getS154HC_1616())
                 .build();
 
 
-    return crane132;
+    return concreteCrane132;
+
 
       }
 

@@ -14,7 +14,7 @@ public abstract class AbstractCrane implements Cranable{
 
     protected String model;
     protected String producer;
-    protected PanelAction panelAction;
+    protected ComboBoxPanelAction comboBoxPanelAction;
 
 
 
