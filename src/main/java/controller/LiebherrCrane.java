@@ -28,10 +28,24 @@ public class LiebherrCrane extends TowerCrane {
     private int s154hc168, s154hc1616,s132hc5,s132hc25,s132hc125,s132hc168;
     private String modelName;
 
+    public TowerCrane setConcreteTowerCrane(ControlPanel liebherrControl) {
+
+        concreteCrane132 = new Builder("Liebherr 132EC-H8")
+                .s132hc25(liebherrControl.getS120HC_25())
+                .s132hc5(liebherrControl.getS120HC_50())
+                .s132hc125(liebherrControl.getS120HC_125())
+                .s132hc168(liebherrControl.getS132HC_168())
+                .s154hc168(liebherrControl.getS154HC_168())
+                .s154hc1616(liebherrControl.getS154HC_1616())
+                .build();
+
+
+        return concreteCrane132;
+    }
 
 
     //Builder pattern for new crane
-    public static class Builder {
+    private static class Builder {
         private int s154hc168=0;
         private int s154hc1616=0;
         private int s132hc5=0;
@@ -43,7 +57,7 @@ public class LiebherrCrane extends TowerCrane {
 
 
         private Builder (String name){
-            this.modelName = name;}
+            modelName = name;}
 
         private Builder s154hc168 (int val)
         {s154hc168 = val; return this;}
@@ -70,6 +84,7 @@ public class LiebherrCrane extends TowerCrane {
         s132hc5=builder.s132hc5;
         s132hc25=builder.s132hc25;
     }
+
 
 
     ArrayList<Section> towerSectionCollection = new ArrayList<Section>();
@@ -152,22 +167,7 @@ public class LiebherrCrane extends TowerCrane {
 
 
 
-    public TowerCrane setConcreteTowerCrane(ControlPanel liebherrControl) {
 
-        concreteCrane132 = new Builder("Liebherr 132EC-H8")
-                .s132hc25(liebherrControl.getS120HC_25())
-                .s132hc5(liebherrControl.getS120HC_50())
-                .s132hc125(liebherrControl.getS120HC_125())
-                .s132hc168(liebherrControl.getS132HC_168())
-                .s154hc168(liebherrControl.getS154HC_168())
-                .s154hc1616(liebherrControl.getS154HC_1616())
-                .build();
-
-
-    return concreteCrane132;
-
-
-      }
 
 
 

@@ -22,6 +22,10 @@ public class PotainCrane extends TowerCrane {
     private CraneComboboxPanel craneComboboxPanel;
 
 
+    private int sect_K439A;
+    private int sect_K437A;
+    private int sect_K437C;
+
     public PotainCrane (CraneComboboxPanel craneComboboxPanel) {
         this.craneComboboxPanel = craneComboboxPanel;
     }
@@ -36,6 +40,11 @@ public class PotainCrane extends TowerCrane {
         super.makeTower();
     }
 
+    @Override
+    public TowerCrane setConcreteTowerCrane(ControlPanel lc) {
+        return super.setConcreteTowerCrane(lc);
+    }
+
     public void createControl ( TowerCrane crane, CranePanel cranePanel){
 
         ControlPanel controlPanel = new PotainControl(crane,cranePanel);
@@ -43,5 +52,9 @@ public class PotainCrane extends TowerCrane {
         cranePanel.addContol(controlPanel.getControlPanel());
 
     }
+
+
+
+
 
 }
