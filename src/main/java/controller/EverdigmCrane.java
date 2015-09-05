@@ -19,13 +19,8 @@ public class EverdigmCrane extends TowerCrane {
         this.parent = craneComboboxPanel;
 
 
-
-
     }
-    public String[] availableModels(){
-        final String EVERDIGMMODELS[]={"Everdigm KH-310"};
-        return EVERDIGMMODELS;
-    }
+
 
 
 
