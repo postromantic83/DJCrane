@@ -14,18 +14,18 @@ public class PotainControl extends ControlPanel implements Observer {
 
     private TowerCrane crane;
     private CranePanel cranePanel;
-    private JPanel panControl = new JPanel();
+    public JPanel panControl;
 
     private ButtonPanelView sect_K439A;
     private ButtonPanelView sect_K437A;
     private ButtonPanelView sect_K437C;
 
-    public int getK439A (){
-        return sect_K439A.getTextFieldValue();
+    public int getK439A (){return sect_K439A.getValue();}
+    public int getK437A(){
+        return sect_K437A.getValue();
     }
-
     public int getK437C(){
-        return sect_K437A.getTextFieldValue();
+        return sect_K437C.getValue();
     }
 
 
@@ -35,6 +35,15 @@ public class PotainControl extends ControlPanel implements Observer {
     public PotainControl(TowerCrane crane, CranePanel cranePanel) {
         this.crane = crane;
         this.cranePanel = cranePanel;
+        panControl = new JPanel();
+
+        BoxLayout layout = new BoxLayout(panControl,BoxLayout.PAGE_AXIS);
+
+//        FlowLayout layout=new FlowLayout(FlowLayout.LEFT);
+
+
+        panControl.setLayout(layout);
+
 
     }
 
@@ -42,19 +51,33 @@ public class PotainControl extends ControlPanel implements Observer {
     @Override
     public void setControl (TowerCrane crane) {
 
+       //NEW INIVERSAL PANEL ADDING:
+
+        sect_K439A = new ButtonPanelView("K439A",this);
+        sect_K437A = new ButtonPanelView("K437A",this);
+        sect_K437C = new ButtonPanelView("K437C",this);
 
 
-                    //NEW INIVERSAL PANEL ADDING:
 
-        sect_K439A = new ButtonPanelView("K439A");
-        sect_K437A = new ButtonPanelView("K437A");
-        sect_K437C = new ButtonPanelView("K437C");
 
-        sect_K439A.addObserver(this);
-        sect_K437A.addObserver(this);
-        sect_K437C.addObserver(this);
+        addButton(sect_K439A);
+        addButton(sect_K437A);
+
+        for(int i=0; i<20;i++)
+        addButton(new ButtonPanelView("K437C",this));
+
+
 
     }
+    private void addButton (ButtonPanelView buttonPanelView){
+
+        buttonPanelView.addObserver(this);
+        panControl.add(buttonPanelView.getButtonPanel());
+
+    }
+
+
+
     private void setTower(){
 
         crane = crane.setConcreteTowerCrane(this);
@@ -72,5 +95,11 @@ public class PotainControl extends ControlPanel implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         if (o==sect_K439A) System.out.println((Integer)arg);
+        if (o==sect_K437A) System.out.println((Integer)arg);
+//        if (o==sect_K439C) System.out.println((Integer)arg);
+
+
+
+        //TODO setTower();
     }
 }
