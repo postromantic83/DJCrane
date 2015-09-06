@@ -1,10 +1,13 @@
 package unipanel;
 
+import view.ControlPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
+import java.util.Observer;
 
 
 /**
@@ -13,18 +16,26 @@ import java.util.Observable;
 public class ButtonPanelView extends Observable {
 
     protected JPanel buttonPanel;
+    protected ControlPanel controlPanel;
     protected String name;
+    protected int value;
 
     private JButton increaseButton = new JButton("+");
     private JButton decreaseButton = new JButton("-");
     private JTextField jTextField = new JTextField("0");
-    private JLabel jLabel = new JLabel (name);
+    private JLabel jLabel;
 
-    public ButtonPanelView (String name){
+
+    public int getValue (){return value;}
+
+    public ButtonPanelView (String name, ControlPanel controlPanel){
         this.buttonPanel = new JPanel ();
         this.name = name;
+        this.controlPanel = controlPanel;
 
+        this.addObserver((Observer) controlPanel);
 
+        jLabel = new JLabel (name);
 
         GridBagLayout gb1 = new GridBagLayout();
         this.buttonPanel.setLayout(gb1);
@@ -69,6 +80,8 @@ public class ButtonPanelView extends Observable {
         jTextField.setActionCommand("textField");
 
 
+        controlPanel.panControl.add(this.getButtonPanel());
+
 
         increaseButton.addActionListener(new ActionListener() {
             @Override
@@ -102,9 +115,16 @@ public class ButtonPanelView extends Observable {
 
 
     }
+    private void setValue(){
+        value = Integer.parseInt(jTextField.getText());
+
+    }
+
+
     private void hasModified (){
+        setValue();
         setChanged();
-        notifyObservers(Integer.parseInt(jTextField.getText()));
+        notifyObservers(value);
 
     }
 
@@ -113,8 +133,5 @@ public class ButtonPanelView extends Observable {
     public int getTextFieldValue(){
         return Integer.parseInt(jTextField.getText());
     }
-
-
-
 
 }

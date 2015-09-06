@@ -15,6 +15,7 @@ import javax.swing.*;
 public class ControlPanel extends JPanel {
 
    private TowerCrane crane;
+    public JPanel panControl;
 
     ControlPanel (){
 

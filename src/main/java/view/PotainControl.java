@@ -14,18 +14,22 @@ public class PotainControl extends ControlPanel implements Observer {
 
     private TowerCrane crane;
     private CranePanel cranePanel;
-    private JPanel panControl = new JPanel();
+    public JPanel panControl;
 
     private ButtonPanelView sect_K439A;
     private ButtonPanelView sect_K437A;
     private ButtonPanelView sect_K437C;
 
     public int getK439A (){
-        return sect_K439A.getTextFieldValue();
+        return sect_K439A.getValue();
+    }
+
+    public int getK437A(){
+        return sect_K437A.getValue();
     }
 
     public int getK437C(){
-        return sect_K437A.getTextFieldValue();
+        return sect_K437C.getValue();
     }
 
 
@@ -35,6 +39,9 @@ public class PotainControl extends ControlPanel implements Observer {
     public PotainControl(TowerCrane crane, CranePanel cranePanel) {
         this.crane = crane;
         this.cranePanel = cranePanel;
+        panControl = new JPanel();
+
+        panControl.setLayout(new BoxLayout(panControl, BoxLayout.Y_AXIS));
 
     }
 
@@ -42,17 +49,19 @@ public class PotainControl extends ControlPanel implements Observer {
     @Override
     public void setControl (TowerCrane crane) {
 
+       //NEW INIVERSAL PANEL ADDING:
 
+        sect_K439A = new ButtonPanelView("K439A",this);
+        sect_K437A = new ButtonPanelView("K437A",this);
+        sect_K437C = new ButtonPanelView("K437C",this);
 
-                    //NEW INIVERSAL PANEL ADDING:
-
-        sect_K439A = new ButtonPanelView("K439A");
-        sect_K437A = new ButtonPanelView("K437A");
-        sect_K437C = new ButtonPanelView("K437C");
-
-        sect_K439A.addObserver(this);
+       /* sect_K439A.addObserver(this);
         sect_K437A.addObserver(this);
-        sect_K437C.addObserver(this);
+        sect_K437C.addObserver(this);*/
+/*
+        panControl.add(sect_K439A.getButtonPanel());
+        panControl.add(sect_K437A.getButtonPanel());
+        panControl.add(sect_K437C.getButtonPanel());*/
 
     }
     private void setTower(){
@@ -72,5 +81,9 @@ public class PotainControl extends ControlPanel implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         if (o==sect_K439A) System.out.println((Integer)arg);
+
+
+
+        //TODO setTower();
     }
 }
