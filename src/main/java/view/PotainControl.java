@@ -20,13 +20,12 @@ public class PotainControl extends ControlPanel implements Observer {
     private ButtonPanelView sect_K437A;
     private ButtonPanelView sect_K437C;
 
+    private GridBagLayout layout;
+    private GridBagConstraints gridBagConstraints;
+
     public int getK439A (){return sect_K439A.getValue();}
-    public int getK437A(){
-        return sect_K437A.getValue();
-    }
-    public int getK437C(){
-        return sect_K437C.getValue();
-    }
+    public int getK437A(){return sect_K437A.getValue();    }
+    public int getK437C(){return sect_K437C.getValue();    }
 
 
 
@@ -37,12 +36,11 @@ public class PotainControl extends ControlPanel implements Observer {
         this.cranePanel = cranePanel;
         panControl = new JPanel();
 
-        BoxLayout layout = new BoxLayout(panControl,BoxLayout.PAGE_AXIS);
-
-//        FlowLayout layout=new FlowLayout(FlowLayout.LEFT);
-
-
-        panControl.setLayout(layout);
+        layout =new GridBagLayout();
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.anchor=GridBagConstraints.WEST;
+        gridBagConstraints.gridx=1;
+        gridBagConstraints.gridy=GridBagConstraints.RELATIVE;
 
 
     }
@@ -51,28 +49,23 @@ public class PotainControl extends ControlPanel implements Observer {
     @Override
     public void setControl (TowerCrane crane) {
 
-       //NEW INIVERSAL PANEL ADDING:
-
         sect_K439A = new ButtonPanelView("K439A",this);
         sect_K437A = new ButtonPanelView("K437A",this);
         sect_K437C = new ButtonPanelView("K437C",this);
 
-
-
-
         addButton(sect_K439A);
         addButton(sect_K437A);
-
-        for(int i=0; i<20;i++)
-        addButton(new ButtonPanelView("K437C",this));
-
+        addButton(sect_K437C);
 
 
     }
     private void addButton (ButtonPanelView buttonPanelView){
 
-        buttonPanelView.addObserver(this);
+        layout.setConstraints(buttonPanelView.getButtonPanel(), gridBagConstraints);
+        panControl.setLayout(layout);
         panControl.add(buttonPanelView.getButtonPanel());
+
+        buttonPanelView.addObserver(this);
 
     }
 

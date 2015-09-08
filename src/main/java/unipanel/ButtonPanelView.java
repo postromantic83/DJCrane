@@ -33,7 +33,6 @@ public class ButtonPanelView extends Observable {
         this.buttonPanel = new JPanel ();
         this.name = name;
         this.controlPanel = controlPanel;
-
         this.addObserver((Observer) controlPanel);
 
         jLabel = new JLabel (name);
