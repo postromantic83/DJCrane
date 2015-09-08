@@ -20,6 +20,7 @@ public class ButtonPanelView extends Observable {
     protected String name;
     protected int value;
 
+
     private JButton increaseButton = new JButton("+");
     private JButton decreaseButton = new JButton("-");
     private JTextField jTextField = new JTextField("0");
