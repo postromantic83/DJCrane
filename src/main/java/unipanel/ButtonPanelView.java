@@ -26,51 +26,51 @@ public class ButtonPanelView extends Observable {
     private JTextField jTextField = new JTextField("0");
     private JLabel jLabel;
 
-
     public int getValue (){return value;}
 
-    public ButtonPanelView (String name, ControlPanel controlPanel){
-        this.buttonPanel = new JPanel ();
+    public ButtonPanelView (String name, ControlPanel controlPanel) {
+        this.buttonPanel = new JPanel();
         this.name = name;
         this.controlPanel = controlPanel;
         this.addObserver((Observer) controlPanel);
 
-        jLabel = new JLabel (name);
+        jLabel = new JLabel(name);
 
         GridBagLayout gb1 = new GridBagLayout();
         this.buttonPanel.setLayout(gb1);
 
-        GridBagConstraints cLab1 = new GridBagConstraints();
-        cLab1.anchor=GridBagConstraints.WEST;
-        cLab1.gridx=1;
-        cLab1.gridy=GridBagConstraints.RELATIVE;
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
 
-        gb1.setConstraints(jLabel, cLab1);
+
+        gb1.setConstraints(jLabel, gridBagConstraints);
         this.buttonPanel.add(jLabel);
 
 
         GridBagConstraints cBtn;
         cBtn = new GridBagConstraints();
-        cBtn.anchor=GridBagConstraints.WEST;
-        cBtn.gridx=2;
-        cBtn.gridy=GridBagConstraints.RELATIVE;
+        cBtn.anchor = GridBagConstraints.WEST;
+        cBtn.gridx = 2;
+        cBtn.gridy = GridBagConstraints.RELATIVE;
 
         this.buttonPanel.add(increaseButton);
 
         gb1.setConstraints(increaseButton, cBtn);
 
-        cBtn.gridx=3;
+        cBtn.gridx = 3;
 
         gb1.setConstraints(decreaseButton, cBtn);
         this.buttonPanel.add(decreaseButton);
 
         GridBagConstraints cTxt = new GridBagConstraints();
         cTxt = new GridBagConstraints();
-        cTxt.anchor=GridBagConstraints.EAST;
-        cTxt.gridx=4;
-        cTxt.gridy=GridBagConstraints.RELATIVE;
-        cTxt.ipadx=30;
-        cTxt.weightx=0.5;
+        cTxt.anchor = GridBagConstraints.EAST;
+        cTxt.gridx = 4;
+        cTxt.gridy = GridBagConstraints.RELATIVE;
+        cTxt.ipadx = 30;
+        cTxt.weightx = 0.5;
 
         gb1.setConstraints(jTextField, cTxt);
         this.buttonPanel.add(jTextField);
@@ -86,35 +86,50 @@ public class ButtonPanelView extends Observable {
         increaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int val1 = Integer.parseInt(jTextField.getText());
-                val1++;
-                jTextField.setText(String.valueOf(val1));
-                hasModified();
+                increasing();
+
             }
         });
 
-        decreaseButton.addActionListener (new ActionListener() {
+        decreaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int val1 = Integer.parseInt(jTextField.getText());
-                if (val1 > 0) {
-                    val1--;
-                    jTextField.setText(String.valueOf(val1));
-                    hasModified();
-                }
+                decreasing();
+
             }
         });
 
         jTextField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            hasModified();
+                hasModified();
             }
         });
+    }
+        public void increasing (){
+            int val1 = Integer.parseInt(jTextField.getText());
+            val1++;
+            jTextField.setText(String.valueOf(val1));
+            hasModified();
 
 
 
     }
+    public void decreasing() {
+        int val1 = Integer.parseInt(jTextField.getText());
+        if (val1 > 0) {
+            val1--;
+            jTextField.setText(String.valueOf(val1));
+            hasModified();
+
+        }
+
+    }
+
+
+
+
+
     private void setValue(){
         value = Integer.parseInt(jTextField.getText());
 
@@ -129,9 +144,5 @@ public class ButtonPanelView extends Observable {
     }
 
     public JPanel getButtonPanel () {return this.buttonPanel;}
-
-    public int getTextFieldValue(){
-        return Integer.parseInt(jTextField.getText());
-    }
 
 }
