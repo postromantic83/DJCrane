@@ -11,7 +11,7 @@ package model;
 public class Section {
     float mass;
     float lenght,height,weight;
-    TowerSection typ;
+    LiebherrSections typ;
     public String name;
     int id;
 
@@ -35,14 +35,14 @@ public class Section {
 
 
 
-    Section (TowerSection typ) {
+    Section (LiebherrSections typ) {
         this.typ = typ;
 
 
     }
 
 
-    Section (TowerSection typ, float lenght,float height,float weight,float mass){
+    Section (LiebherrSections typ, float lenght,float height,float weight,float mass){
 
         this.mass = mass;
         this.height=height;

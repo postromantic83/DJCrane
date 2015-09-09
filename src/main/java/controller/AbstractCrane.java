@@ -14,6 +14,7 @@ public abstract class AbstractCrane implements Cranable{
 
     protected String model;
     protected String producer;
+    protected String modification;
     protected ComboBoxPanelAction comboBoxPanelAction;
 
 
@@ -27,6 +28,11 @@ public abstract class AbstractCrane implements Cranable{
     @Override
     public void setProducer(String producer) {
         this.producer = producer;
+
+    }
+
+    public void setModification(String modification){
+        this.modification = modification;
 
     }
 

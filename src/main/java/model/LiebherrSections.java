@@ -9,12 +9,7 @@ package model;
  *
  *
  */
-public enum TowerSection {sect120HC2_5m,sect120HC5m,sect154HC168,sect154HC1616;
-
-
-
-
-
+public enum LiebherrSections {sect120HC2_5m,sect120HC5m,sect154HC168,sect154HC1616;
 
 
 }

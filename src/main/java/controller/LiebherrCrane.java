@@ -179,7 +179,6 @@ public class LiebherrCrane extends TowerCrane {
     public double getHeightUnderJib(double height) {
 
         double height2 =  height+3.0;
-
         return height2;
 
 

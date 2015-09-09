@@ -58,16 +58,17 @@ public class ComboBoxPanelAction implements ActionListener {
         }
 
 
-        //set model
         if (src == craneComboboxPanel.getModelComboBox()) {
-
             craneComboboxPanel.fillModificationComboBox((String) craneComboboxPanel.getModelComboBox().getSelectedItem());
             crane.setModel((String) craneComboboxPanel.getModelComboBox().getSelectedItem());
             crane.createControl(crane, cranePanel);
-
-
         }
 
+        if (src == craneComboboxPanel.getModificationComboBox()){
+
+            crane.setModification((String)craneComboboxPanel.getModificationComboBox().getSelectedItem());
+
+        }
 
     }
 
