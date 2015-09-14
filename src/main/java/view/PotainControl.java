@@ -79,7 +79,7 @@ public class PotainControl extends ControlPanel implements Observer {
             sect_S20S20 = new ButtonPanelView("S20/S20 1.5m", this);
             sect_S24A = new ButtonPanelView("S24A 3.0m", this);
             sect_S24E = new ButtonPanelView("S24E 10.5m 40/40", this);
-            sect_SR24E = new ButtonPanelView("S24E 10.5m 40/40", this);
+            sect_SR24E = new ButtonPanelView("SR24E 10.5m 40/40", this);
             sect_SR26E = new ButtonPanelView("SR26E 10.5m 50/50",this);
 
             addButton(sect_S20S20);
@@ -183,11 +183,16 @@ public class PotainControl extends ControlPanel implements Observer {
     private void makeTowerCollection (){
         indexCollection=0;
         towerCollection.clear();
-        addSectionElement(sect_K439A);
-        addSectionElement(sect_K437A);
-        addSectionElement(sect_K437C);
 
+         addSectionElement(sect_K439A);
+         addSectionElement(sect_K437A);
+         addSectionElement(sect_K437C);
 
+         addSectionElement(sect_SR26E);
+         addSectionElement(sect_SR24E);
+         addSectionElement(sect_S24E);
+         addSectionElement(sect_S24A);
+         addSectionElement(sect_S20S20);
 
     }
     private void visioRedraw(){
@@ -198,9 +203,11 @@ public class PotainControl extends ControlPanel implements Observer {
 
 
     private void addSectionElement (ButtonPanelView element){
-        for (int i=1;i<=element.getValue();i++) {
-            towerCollection.add(new Section(element.getName(), indexCollection));
-            indexCollection++;
+        if (element !=null) {
+            for (int i = 1; i <= element.getValue(); i++) {
+                towerCollection.add(new Section(element.getName(), indexCollection));
+                indexCollection++;
+            }
         }
     }
 

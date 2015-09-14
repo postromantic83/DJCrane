@@ -32,6 +32,8 @@ public class VisioPanel extends JPanel {
     private int x;
     private int y;
     private int m;
+    private String element;
+
 
     private BasicStroke pen1;
     private BasicStroke pen2;
@@ -103,7 +105,7 @@ public class VisioPanel extends JPanel {
             Iterator<Section> sectionIterator = this.towerCollection.iterator();
             int n = 0;
             int size;
-            String element;
+
 
 
             while (sectionIterator.hasNext()) {
@@ -112,61 +114,36 @@ public class VisioPanel extends JPanel {
                 n++;
 
                 if (element.equals("sect154HC1616")) {
-                    g.drawString(String.valueOf(n), x + 3 * m, y);
-                    y = y - 10 * m;
-                    g.setColor(Color.BLACK);
-
-                    g.setStroke(pen2);
-                    g.drawRect(x, y, 2 * m, 10 * m);
-                    g.setStroke(pen1);
-
+                    drawSectionReinforced(10, 2);
 
                 }
 
                 if (element.equals("sect154HC168")) {
-                    g.drawString(String.valueOf(n), x + 3 * m, y);
-                    y = y - 10 * m;
-                    g.setColor(Color.BLACK);
-                    g.drawRect(x, y, 2 * m, 10 * m);
-
+                    drawSection(10,2);
 
                 }
                 if (element.equals("sect132HC168")) {
-                    g.drawString(String.valueOf(n), x + 3 * m, y);
-                    y = y - 10 * m;
-                    g.setColor(Color.BLACK);
-                    g.drawRect(x, y, 2 * m, 10 * m);
-
+                    drawSection(10,2);
 
                 }
 
                 if (element.equals("sect132HC125")) {
-                    g.drawString(String.valueOf(n), x + 3 * m, y);
-                    y = y - 12 * m;
-                    g.setColor(Color.BLACK);
-                    g.drawRect(x, y, 2 * m, 12 * m);
+                    drawSection(12,2);
 
 
                 }
 
                 if (element.equals("sect132HC5")) {
-                    g.drawString(String.valueOf(n), x + 3 * m, y);
-                    y = y - 5 * m;
-                    g.setColor(Color.BLACK);
-                    g.drawRect(x, y, 2 * m, 5 * m);
-
+                    drawSection(5,2);
 
                 }
                 if (element.equals("sect132HC25")) {
-                    g.drawString(String.valueOf(n), x + 3 * m, y);
-                    y = y - 25;
-                    g.setColor(Color.BLACK);
-                    g.drawRect(x, y, 2 * m, (int) (2.5 * m));
+                    drawSection(3, 2);
 
 
                 }
                 if (element.equals("K439A")) {
-                    drawSectionReinforced(5,2);
+                    drawSectionReinforced(5, 2);
 
                 }
                 if (element.equals("K437A")) {
@@ -174,38 +151,61 @@ public class VisioPanel extends JPanel {
 
                 }
                 if (element.equals("K437C")) {
-                    drawSection(3,2);
+                    drawSection(3, 2);
 
                 }
 
 
 
+                switch (element.toString()) {
+                    case ("SR26E 10.5m 50/50"):
+                        drawSectionReinforced(10,1);
+                        break;
+                    case ("SR24E 10.5m 40/40"):
+                        drawSection(10, 1);
+                        break;
+                    case ("S24E 10.5m 40/40"):
+                        drawSection(10,1);
+                        break;
+                    case ("S24A 3.0m"):
+                        drawSection(3,1);
+                        break;
+                    case ("S20/S20 1.5m"):
+                        drawSection(1,1);
+                        break;
+
+                }
+
+
+
+
+
             }
-            //рисуем голову крана
-            //поворотка
+
+            //slewing platform
             y -= 1 * m;
             g.drawRect(x + ((int) (0.1 * m)), y, (int) (1.8 * m), 1 * m);
 
-            //кабина
+            //
             y -= 4 * m;
             g.drawRect(x, y, 2 * m, 4 * m);
 
-            //стрела
+            //jib
             g.drawLine(x, y, x + 30 * m, y);
             g.drawLine(x + 2 * m, y, x + 3 * m, y - 1 * m);
             g.drawLine(x + 29 * m, y - 1 * m, x + 3 * m, y - 1 * m);
             g.drawLine(x + 29 * m, y - 1 * m, x + 30 * m, y);
 
-            //консоль
+            //counterjib
             //y-=1*m;
             g.drawRect(x - 10 * m, y - (int) (0.2 * m), 10 * m, (int) (0.2 * m));
 
-            //оголовок
+            //tower head
             g.drawLine(x, y, x + 1 * m, y - 5 * m);
             g.drawLine(x + 2 * m, y, x + m, y - 5 * m);
 
 
-            //ванты
+            //jib suspension
             g.drawLine(x + m, y - 5 * m, x - 8 * m, y - (int) (0.2 * m));
             g.drawLine(x + m, y - 5 * m, x + 20 * m, y - m);
 
@@ -215,6 +215,7 @@ public class VisioPanel extends JPanel {
         return g;
     }
     private void drawSection(int height, int width){
+            g.drawString(element.toString(), x + 3 * m, y);
             y = y - height * m;
             g.setColor(Color.BLACK);
             g.drawRect(x, y, width * m, height * m);
