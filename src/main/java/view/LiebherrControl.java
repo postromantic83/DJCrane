@@ -366,8 +366,8 @@ public class LiebherrControl extends ControlPanel {
         crane.makeTower();
 
 
-        cranePanel.mp1.setCollection(crane.getTower());
-        cranePanel.mp1.repaint();
+        cranePanel.visioPanel.setCollection(crane.getTower());
+        cranePanel.visioPanel.repaint();
 
 
         cranePanel.hHeader1.setText(Double.toString(crane.getHeight()));

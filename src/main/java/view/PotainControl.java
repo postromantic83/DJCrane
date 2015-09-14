@@ -119,8 +119,8 @@ public class PotainControl extends ControlPanel implements Observer {
         crane.makeTower();
 
 
-/*        cranePanel.mp1.setCollection(crane.getTower());
-        cranePanel.mp1.repaint();
+/*        cranePanel.visioPanel.setCollection(crane.getTower());
+        cranePanel.visioPanel.repaint();
 
 
         cranePanel.hHeader1.setText(Double.toString(crane.getHeight()));
@@ -137,7 +137,9 @@ public class PotainControl extends ControlPanel implements Observer {
             if (crane.getModel()=="Potain MDT-178" | crane.getModel()=="Potain MDT-218") towerDown_MDT();
                 else towerDown_MCT();
 
-//        setTower();
+        makeTowerCollection();
+        visioRedraw();
+
     }
 
 
@@ -177,8 +179,6 @@ public class PotainControl extends ControlPanel implements Observer {
     }
     private ArrayList towerCollection = new ArrayList();
 
-    public ArrayList getTowerCollection (){return towerCollection;}
-
     private int indexCollection;
     private void makeTowerCollection (){
         indexCollection=0;
@@ -187,13 +187,21 @@ public class PotainControl extends ControlPanel implements Observer {
         addSectionElement(sect_K437A);
         addSectionElement(sect_K437C);
 
+
+
     }
+    private void visioRedraw(){
+        cranePanel.visioPanel.setCollection(towerCollection);
+        cranePanel.visioPanel.repaint();
+
+    }
+
+
     private void addSectionElement (ButtonPanelView element){
         for (int i=1;i<=element.getValue();i++) {
             towerCollection.add(new Section(element.getName(), indexCollection));
             indexCollection++;
         }
-
     }
 
 

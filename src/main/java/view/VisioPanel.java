@@ -27,17 +27,25 @@ import java.util.Iterator;
  */
 public class VisioPanel extends JPanel {
 
-    private ArrayList col2;
+    private ArrayList towerCollection;
     private Graphics2D g;
+    private int x;
+    private int y;
+    private int m;
+
+    private BasicStroke pen1;
+    private BasicStroke pen2;
+
     PropertyMain props;
 
 
     VisioPanel() {
         props = new PropertyMain();
+
     }
 
     public void setCollection(ArrayList collect) {
-        this.col2 = collect;
+        this.towerCollection = collect;
 
 
     }
@@ -62,7 +70,7 @@ public class VisioPanel extends JPanel {
         BufferedImage bi = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D gra = bi.createGraphics();
         gra = drawCrane(gra);
-        gra.drawImage(bi,null,0,0);
+        gra.drawImage(bi, null, 0, 0);
 
         try {
             ImageIO.write(bi, "JPEG", new File("MyImageName.JPG"));
@@ -81,26 +89,26 @@ public class VisioPanel extends JPanel {
     public Graphics2D drawCrane(Graphics2D graph) {
         this.g = graph;
 
-        BasicStroke pen1 = new BasicStroke(1);
-        BasicStroke pen2 = new BasicStroke(2);
+        pen1 = new BasicStroke(1);
+        pen2 = new BasicStroke(2);
 
 
 
-        int x = props.getSTARTX();
-        int y = props.getSTARTY();
-        int m = props.getSCALE();
+        x = props.getSTARTX();
+        y = props.getSTARTY();
+        m = props.getSCALE();
 
 
-        if (this.col2 != null) {
-            Iterator<Section> it1 = this.col2.iterator();
+        if (this.towerCollection != null) {
+            Iterator<Section> sectionIterator = this.towerCollection.iterator();
             int n = 0;
             int size;
             String element;
 
 
-            while (it1.hasNext()) {
+            while (sectionIterator.hasNext()) {
 
-                element = it1.next().name;
+                element = sectionIterator.next().name;
                 n++;
 
                 if (element.equals("sect154HC1616")) {
@@ -157,6 +165,19 @@ public class VisioPanel extends JPanel {
 
 
                 }
+                if (element.equals("K439A")) {
+                    drawSectionReinforced(5,2);
+
+                }
+                if (element.equals("K437A")) {
+                    drawSection(5,2);
+
+                }
+                if (element.equals("K437C")) {
+                    drawSection(3,2);
+
+                }
+
 
 
             }
@@ -192,9 +213,26 @@ public class VisioPanel extends JPanel {
 
         }
         return g;
-
+    }
+    private void drawSection(int height, int width){
+            y = y - height * m;
+            g.setColor(Color.BLACK);
+            g.drawRect(x, y, width * m, height * m);
 
     }
+    private void drawSectionReinforced(int height, int width){
+        g.setStroke(pen2);
+        y = y - height * m;
+        g.setColor(Color.BLACK);
+        g.drawRect(x, y, width * m, height * m);
+        g.setStroke(pen1);
+
+    }
+
+
+
+
+
 }
 
 

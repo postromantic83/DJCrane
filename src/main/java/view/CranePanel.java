@@ -2,7 +2,6 @@ package view;
 
 
 import mainpack.PropertyMain;
-import model.CraneStructure;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,7 +43,7 @@ public class CranePanel extends JPanel {
     JPanel panLeft = new JPanel();
 
 
-    VisioPanel mp1 = new VisioPanel();
+    VisioPanel visioPanel = new VisioPanel();
 
     public CraneComboboxPanel getComboboxPanel (){return this.craneComboboxPanel;}
 
@@ -116,8 +115,8 @@ public class CranePanel extends JPanel {
         pan1.add(l1);
 
 
-        pan1.add(mp1);
-        mp1.repaint();
+        pan1.add(visioPanel);
+        visioPanel.repaint();
 
         //Шапка с высотами крана
         GridBagConstraints cLab2 = new GridBagConstraints();
