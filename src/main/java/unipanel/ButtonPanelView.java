@@ -27,6 +27,7 @@ public class ButtonPanelView extends Observable {
     private JLabel jLabel;
 
     public int getValue (){return value;}
+    public String getName (){return name;}
 
     public ButtonPanelView (String name, ControlPanel controlPanel) {
         this.buttonPanel = new JPanel();

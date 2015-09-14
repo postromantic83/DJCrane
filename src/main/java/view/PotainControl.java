@@ -1,11 +1,13 @@
 package view;
 
 import controller.TowerCrane;
+import model.Section;
 import unipanel.ButtonPanelView;
 import unipanel.UpDownButtonPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -173,4 +175,26 @@ public class PotainControl extends ControlPanel implements Observer {
                         else if(sect_SR26E.getValue()>0)sect_SR26E.decreasing();
 
     }
+    private ArrayList towerCollection = new ArrayList();
+
+    public ArrayList getTowerCollection (){return towerCollection;}
+
+    private int indexCollection;
+    private void makeTowerCollection (){
+        indexCollection=0;
+        towerCollection.clear();
+        addSectionElement(sect_K439A);
+        addSectionElement(sect_K437A);
+        addSectionElement(sect_K437C);
+
+    }
+    private void addSectionElement (ButtonPanelView element){
+        for (int i=1;i<=element.getValue();i++) {
+            towerCollection.add(new Section(element.getName(), indexCollection));
+            indexCollection++;
+        }
+
+    }
+
+
 }
